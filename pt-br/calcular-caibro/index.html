@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Calcular caibro e inclinação do telhado, beiral e entalhe</title>
+<meta name="description" content="Calcular caibro grátis: comprimento, altura e inclinação do telhado com duas medidas, o beiral e o entalhe conferido contra ¼ da altura do caibro.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2ECDF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141619" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/notchline/pt-br/calcular-caibro/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/notchline/de/sparrenrechner/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/notchline/fr/calcul-chevron/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/notchline/nl/kepers-berekenen/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/notchline/it/calcolo-puntone/">
+<link rel="alternate" hreflang="es" href="https://mufa-tech.github.io/notchline/es/calcular-cabio/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/notchline/pt-br/calcular-caibro/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/notchline/pl/kalkulator-krokwi/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/notchline/tr/mertek-hesaplama/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Notchline">
+<meta property="og:title" content="Calcular caibro e inclinação do telhado, beiral e entalhe">
+<meta property="og:description" content="Calcular caibro grátis: comprimento, altura e inclinação do telhado com duas medidas, o beiral e o entalhe conferido contra ¼ da altura do caibro.">
+<meta property="og:url" content="https://mufa-tech.github.io/notchline/pt-br/calcular-caibro/">
+<meta property="og:image" content="https://mufa-tech.github.io/notchline/assets/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../pt-br/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Notchline</a>
+<nav class="main" aria-label="Menu principal"><a href="../../pt-br/calcular-escada/">Calcular escada</a><a href="../../pt-br/calcular-caibro/" aria-current="page">Calcular caibro</a><a href="../../pt-br/support/">Ajuda</a></nav>
+<details class="langpick"><summary aria-label="Idioma: Português"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>PT</span></summary><nav aria-label="Idioma"><a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../pt-br/">Notchline</a></p>
+<h1>Calcular caibro</h1>
+<p class="lead">Preencha duas destas medidas: vão ou meio vão, altura, inclinação e comprimento do caibro. A página calcula o resto, a ponta do beiral e o entalhe sobre o frechal, conferido contra ¼ da altura do caibro.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="rafters" novalidate>
+<p class="small">Digite dois destes: meio vão ou vão, altura, inclinação, comprimento do caibro. O app calcula o resto.</p>
+<fieldset class="choice"><legend>Unidades</legend><div class="pills"><label class="pill"><input type="radio" name="units" value="mm"><span>mm</span></label><label class="pill"><input type="radio" name="units" value="cm" checked><span>cm</span></label><label class="pill"><input type="radio" name="units" value="ftIn"><span>pés/pol</span></label></div></fieldset>
+<fieldset class="choice"><legend>Você sabe o</legend><div class="pills"><label class="pill"><input type="radio" name="runkind" value="span" checked><span>Vão</span></label><label class="pill"><input type="radio" name="runkind" value="run"><span>Meio vão</span></label></div></fieldset>
+<div class="field"><label for="r-run">Vão ou meio vão</label>
+<div class="joined"><input id="r-run" name="r-run" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="720" aria-describedby="r-run-hint r-run-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-run-hint">Vão: da face externa de uma parede à face externa da outra. Meio vão: a metade.</span><span class="err" id="r-run-err" hidden></span></div>
+<fieldset class="choice"><legend>Inclinação em</legend><div class="pills"><label class="pill"><input type="radio" name="pitchas" value="per12"><span>Altura por 12</span></label><label class="pill"><input type="radio" name="pitchas" value="degrees" checked><span>Graus</span></label><label class="pill"><input type="radio" name="pitchas" value="percent"><span>Porcentagem</span></label></div></fieldset>
+<div class="field"><label for="r-pitch">Inclinação</label>
+<input id="r-pitch" name="r-pitch" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="30" aria-describedby="r-pitch-err">
+<span class="err" id="r-pitch-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-rise">Altura</label>
+<div class="joined"><input id="r-rise" name="r-rise" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-rise-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="err" id="r-rise-err" hidden></span></div><div class="field"><label for="r-len">Comprimento do caibro</label>
+<div class="joined"><input id="r-len" name="r-len" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-len-hint r-len-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-len-hint">Medido pela borda de cima</span><span class="err" id="r-len-err" hidden></span></div></div>
+<details class="more" open><summary>Beiral, entalhe, alturas</summary>
+<div class="field"><label for="r-oh">Beiral</label>
+<div class="joined"><input id="r-oh" name="r-oh" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="45" aria-describedby="r-oh-hint r-oh-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-oh-hint">Distância na horizontal da face da parede até a ponta do caibro</span><span class="err" id="r-oh-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-depth">Altura do caibro</label>
+<div class="joined"><input id="r-depth" name="r-depth" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="20" aria-describedby="r-depth-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="err" id="r-depth-err" hidden></span></div><div class="field"><label for="r-seat">Assento</label>
+<div class="joined"><input id="r-seat" name="r-seat" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="8" aria-describedby="r-seat-hint r-seat-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-seat-hint">Corte horizontal sobre o frechal, em geral a largura do frechal</span><span class="err" id="r-seat-err" hidden></span></div></div>
+<fieldset class="choice"><legend>O caibro se apoia em</legend><div class="pills"><label class="pill"><input type="radio" name="bearing" value="woodOrMetal" checked><span>Madeira ou aço</span></label><label class="pill"><input type="radio" name="bearing" value="masonry"><span>Alvenaria ou concreto</span></label></div></fieldset>
+</details>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Resultado</h2>
+<div id="calc-nojs" class="callout"><p>Esta calculadora roda no seu navegador e precisa de JavaScript. Nada é enviado.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Calculado no seu navegador. Nada do que você digita sai desta página.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"pt-BR","decimal":",","units":"cm","pitch":"degrees","unitNames":{"mm":{"len":"mm"},"cm":{"len":"cm"},"ftIn":{"len":"ft-in"}},"placeholders":{},"errEmpty":"Digite um número.","errNumber":"Esta página não consegue ler esse número.","errFeet":"Escreva assim: 9' 0 3/4\" ou 108,75.","errInteger":"Só números inteiros.","errRange":"Isso foge do que uma escada ou um telhado pode ter.","waiting":"Digite a altura para ver a escada.","app":{"r_riser":"Espelho","r_going":"Piso","r_totalRun":"Comprimento total","r_stringer":"Longarina","r_angle":"Ângulo","r_step":"Passo (2e + p)","formula_riser":"Espelho = {rise} ÷ {risers} = {riser}","rule_within":"Dentro dos limites","rule_over":"Acima do limite em {by}","rule_under":"Abaixo do limite em {by}","rule_notChecked":"Não conferida: falta um valor","rule_notCheckedOpening":"Não conferida: vão não informado","rule_notApplicable":"Não se aplica a esta escada","source_secondary":"Fonte secundária","source_practice":"Prática de obra","yourValue":"Seu valor: {value}","f_run":"Meio vão","f_span":"Vão","f_rise":"Altura","f_pitch":"Inclinação","f_length":"Comprimento do caibro","formula_rafter":"Caibro = {run} × {factor} = {length}","roofConflict":"Alguns valores não batem. Nada foi alterado.","roofFieldConflict":"Não bate com os outros valores: diferença de {gap}","roofEmptyBody":"Digite dois destes: meio vão ou vão, altura, inclinação, comprimento do caibro. O app calcula o resto.","roofPitchCaption":"{per12} · {degrees} · {percent}","derived":"Calculado","measuringLine":"O comprimento do caibro é medido pela borda de cima, da face externa da parede até o eixo da cumeeira.","notchTitle":"Entalhe do caibro","notchHeel":"Corte de prumo","notchDepth":"Profundidade","notchShare":"{percent} da altura do caibro","notchFix":"Ajuste mínimo: assento de {seat} ou menos","notchThumbTitle":"Profundidade do entalhe, regra do terço","notchThumb":"Regra prática, não é norma","notchThumbLimit":"≤ {limit} (⅓ de {depth})","notchFormula":"Entalhe = assento × sen {angle} = {seat} × {sin} = {notch}","notchNoSeat":"Com essa inclinação, o assento pede um entalhe maior do que o caibro aguenta."},"quantity":{"riser":"Altura do espelho","going":"Piso","nosing":"Bocel","treadSurface":"Superfície do degrau","stepLength":"Passo (2e + p)","pitch":"Inclinação","uniformity":"Variação de espelho e piso","headroom":"Altura livre","width":"Largura útil","flightRise":"Altura de um lance","totalRise":"Altura total","risersPerFlight":"Espelhos por lance","landingDepth":"Profundidade do patamar","winders":"Leque","notchFraction":"Profundidade do entalhe","bearing":"Apoio do caibro","tailRemainingDepth":"Sobra no beiral","tailCantilever":"Beiral entalhado"},"roof":{"noSolution":"Esses valores não formam um caibro. O caibro é sempre mais comprido que o meio vão e que a altura.","maxSeat":"Maior assento dentro de ¼ da altura","tail":"Beiral medido no caibro","total":"Caibro com beiral","notchHint":"Informe a altura do caibro e o assento para conferir o entalhe."}}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">Nesta página</p><ol><li><a href="#how">Como é calculado</a></li><li><a href="#birdsmouth">A conferência do entalhe</a></li><li><a href="#pitch">Inclinação em porcentagem, graus e por 12</a></li></ol></nav>
+<h2 id="how">Como é calculado</h2>
+<p>O caibro comum é a hipotenusa de um triângulo retângulo: o meio vão embaixo, a altura no lado. O comprimento é o meio vão vezes o fator da inclinação, √(1 + i²), com a inclinação i em decimal. Um telhado com 30 % tem fator 1,0440, então um meio vão de 4,00 m dá um caibro de 417,6 cm.</p><p>Duas medidas quaisquer entre os lados e o ângulo fecham o triângulo. Se você digitar três que não batem, a página mostra a diferença e não muda nada.</p><p>O comprimento é medido pela borda de cima do caibro, da face externa da parede até o eixo da cumeeira. Antes de cortar, desconte metade da espessura da cumeeira, medida na horizontal.</p>
+<h2 id="birdsmouth">A conferência do entalhe</h2>
+<p>O assento é o corte horizontal que apoia no frechal; o corte de prumo é a face vertical logo acima. A profundidade do entalhe, medida em esquadro com o caibro, é o assento vezes o seno da inclinação. O IRC americano (R802.7.1, que remete à R502.8.1) limita o entalhe na ponta de um caibro de madeira serrada a ¼ da altura da peça, e a R802.6 pede 38 mm (1½ pol) de apoio sobre madeira ou 76 mm (3 pol) sobre alvenaria. A página confere as duas coisas. Não há regra brasileira para isso no app; o limite do IRC serve de referência.</p><p>Muito carpinteiro usa um terço da altura como regra prática. A página mostra esse valor também, marcado como "Regra prática, não é norma". A estrutura em si, a bitola do caibro e o vão que ele vence, fica com o engenheiro ou o projetista.</p>
+<h2 id="pitch">Inclinação em porcentagem, graus e por 12</h2>
+<p>No Brasil, a inclinação do telhado costuma vir em porcentagem, que é a altura dividida pelo meio vão: 30 % é 16,7°, 35 % é 19,3°, 45 % é 24,2° e 100 % é 45°. Em projetos americanos ela aparece como altura por 12: 6 por 12 é 50 % ou 26,6°. A página converte quando você troca.</p>
+<nav class="next" aria-label="Próximo"><p class="next-h">Próximo</p><ul><li><a href="../../pt-br/calcular-escada/">Calcular escada<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">A mesma conta no seu bolso</h2>
+<p>O app resolve o mesmo triângulo também com as alturas do frechal, da cumeeira e da testeira, mede a inclinação com o celular e, no Pro, calcula espigões, rincões e cada caibro curto, inclusive com duas águas de inclinação diferente.</p>
+<p class="small">Funciona sem internet. Sem cadastro, sem anúncios, sem assinatura. Escada reta, a verificação da norma e o caibro comum são grátis; o Pro é um pagamento só.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Em breve</b></span><span class="store soon"><small>App Store</small><b>Em breve</b></span></div>
+</aside>
+<h2>Fontes</h2>
+<ol class="sources"><li><a href="https://codes.iccsafe.org/content/IRC2021P2/chapter-8-roof-ceiling-construction" rel="noopener">ICC, International Residential Code 2021, R802 Wood roof framing</a></li><li><a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9" rel="noopener">NIST SP 811, Appendix B.9: inch, foot</a></li></ol>
+<p class="callout">Os resultados servem de apoio ao projeto. Antes de construir, confira as regras em vigor na prefeitura da sua cidade.</p>
+<p class="updated">Conferido com as fontes em 2 de novembro de 2026.</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Esta página em:</span> <a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Os resultados servem de apoio ao projeto. Antes de construir, confira as regras em vigor na prefeitura da sua cidade.</p>
+<p>O Notchline é feito pela MufaTech, um estúdio pequeno de ferramentas que funcionam sem internet e que você paga uma vez só.</p>
+<nav aria-label="Site"><a href="../../pt-br/">Notchline</a><a href="../../pt-br/calcular-escada/">Calcular escada</a><a href="../../pt-br/calcular-caibro/">Calcular caibro</a><a href="../../pt-br/support/">Ajuda</a><a href="../../pt-br/privacy/">Privacidade</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../../assets/calc-ui.js"></script>
+</body>
+</html>

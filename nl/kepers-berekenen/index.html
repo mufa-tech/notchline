@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Spanten en dakhelling berekenen: keperlengte en vogelbek</title>
+<meta name="description" content="Gratis kepers berekenen: keperlengte, hoogte en dakhelling uit twee waarden, het overstek, en de vogelbek getoetst aan een kwart van de keperhoogte.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2ECDF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141619" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/notchline/nl/kepers-berekenen/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/notchline/de/sparrenrechner/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/notchline/fr/calcul-chevron/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/notchline/nl/kepers-berekenen/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/notchline/it/calcolo-puntone/">
+<link rel="alternate" hreflang="es" href="https://mufa-tech.github.io/notchline/es/calcular-cabio/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/notchline/pt-br/calcular-caibro/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/notchline/pl/kalkulator-krokwi/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/notchline/tr/mertek-hesaplama/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Notchline">
+<meta property="og:title" content="Spanten en dakhelling berekenen: keperlengte en vogelbek">
+<meta property="og:description" content="Gratis kepers berekenen: keperlengte, hoogte en dakhelling uit twee waarden, het overstek, en de vogelbek getoetst aan een kwart van de keperhoogte.">
+<meta property="og:url" content="https://mufa-tech.github.io/notchline/nl/kepers-berekenen/">
+<meta property="og:image" content="https://mufa-tech.github.io/notchline/assets/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../nl/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Notchline</a>
+<nav class="main" aria-label="Hoofdmenu"><a href="../../nl/trap-berekenen/">Trap berekenen</a><a href="../../nl/kepers-berekenen/" aria-current="page">Dak berekenen</a><a href="../../nl/support/">Hulp</a></nav>
+<details class="langpick"><summary aria-label="Taal: Nederlands"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>NL</span></summary><nav aria-label="Taal"><a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl" aria-current="true">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../nl/">Notchline</a></p>
+<h1>Kepers en dakhelling berekenen</h1>
+<p class="lead">Vul twee van de vier in: overspanning of horizontaal, hoogte, dakhelling en keperlengte. De pagina rekent de rest uit, ook de lengte van het overstek, en toetst de vogelbek aan een kwart van de keperhoogte. Zoek je de lengte van een spoor of spant, dan is dat hier de keper.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="rafters" novalidate>
+<p class="small">Vul twee van deze in: horizontaal of overspanning, hoogte, dakhelling, keperlengte. De rest rekent Notchline uit.</p>
+<fieldset class="choice"><legend>Eenheden</legend><div class="pills"><label class="pill"><input type="radio" name="units" value="mm" checked><span>mm</span></label><label class="pill"><input type="radio" name="units" value="cm"><span>cm</span></label><label class="pill"><input type="radio" name="units" value="ftIn"><span>ft-in</span></label></div></fieldset>
+<fieldset class="choice"><legend>Wat je invult</legend><div class="pills"><label class="pill"><input type="radio" name="runkind" value="span" checked><span>Overspanning</span></label><label class="pill"><input type="radio" name="runkind" value="run"><span>Horizontaal</span></label></div></fieldset>
+<div class="field"><label for="r-run">Overspanning of horizontaal</label>
+<div class="joined"><input id="r-run" name="r-run" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="7200" aria-describedby="r-run-hint r-run-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-run-hint">Overspanning: buitenkant muur tot buitenkant muur. Horizontaal: de helft daarvan.</span><span class="err" id="r-run-err" hidden></span></div>
+<fieldset class="choice"><legend>Dakhelling in</legend><div class="pills"><label class="pill"><input type="radio" name="pitchas" value="per12"><span>Stijging per 12</span></label><label class="pill"><input type="radio" name="pitchas" value="degrees" checked><span>Graden</span></label><label class="pill"><input type="radio" name="pitchas" value="percent"><span>Procent</span></label></div></fieldset>
+<div class="field"><label for="r-pitch">Dakhelling</label>
+<input id="r-pitch" name="r-pitch" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="30" aria-describedby="r-pitch-err">
+<span class="err" id="r-pitch-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-rise">Hoogte</label>
+<div class="joined"><input id="r-rise" name="r-rise" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-rise-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="err" id="r-rise-err" hidden></span></div><div class="field"><label for="r-len">Keperlengte</label>
+<div class="joined"><input id="r-len" name="r-len" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-len-hint r-len-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-len-hint">Langs de bovenkant</span><span class="err" id="r-len-err" hidden></span></div></div>
+<details class="more" open><summary>Overstek, vogelbek, hoogtes</summary>
+<div class="field"><label for="r-oh">Overstek</label>
+<div class="joined"><input id="r-oh" name="r-oh" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="450" aria-describedby="r-oh-hint r-oh-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-oh-hint">Horizontaal gemeten, van de buitenkant van de muur tot het eind van de keper</span><span class="err" id="r-oh-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-depth">Keperhoogte</label>
+<div class="joined"><input id="r-depth" name="r-depth" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="200" aria-describedby="r-depth-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="err" id="r-depth-err" hidden></span></div><div class="field"><label for="r-seat">Oplegvlak</label>
+<div class="joined"><input id="r-seat" name="r-seat" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="80" aria-describedby="r-seat-hint r-seat-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-seat-hint">Horizontale snede op de muurplaat, meestal de breedte ervan</span><span class="err" id="r-seat-err" hidden></span></div></div>
+<fieldset class="choice"><legend>De keper ligt op</legend><div class="pills"><label class="pill"><input type="radio" name="bearing" value="woodOrMetal" checked><span>Hout of staal</span></label><label class="pill"><input type="radio" name="bearing" value="masonry"><span>Metselwerk of beton</span></label></div></fieldset>
+</details>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Uitkomst</h2>
+<div id="calc-nojs" class="callout"><p>Deze rekenhulp draait in je browser en heeft JavaScript nodig. Er wordt niets verstuurd.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Uitgerekend in je browser. Wat je intypt, blijft op deze pagina.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"nl-NL","decimal":",","units":"mm","pitch":"degrees","unitNames":{"mm":{"len":"mm"},"cm":{"len":"cm"},"ftIn":{"len":"ft-in"}},"placeholders":{},"errEmpty":"Vul een getal in.","errNumber":"Dit getal kan de pagina niet lezen.","errFeet":"Schrijf het als 9' 0 3/4\" of 108,75.","errInteger":"Alleen hele getallen.","errRange":"Dat valt buiten wat een trap of dak kan zijn.","waiting":"Vul de verdiepingshoogte in, dan zie je de trap.","app":{"r_riser":"Optrede","r_going":"Aantrede","r_totalRun":"Traplengte","r_stringer":"Trapboom","r_angle":"Hoek","r_step":"Staplengte (2O + A)","formula_riser":"Optrede = {rise} ÷ {risers} = {riser}","rule_within":"Binnen de grens","rule_over":"{by} boven de grens","rule_under":"{by} onder de grens","rule_notChecked":"Niet getoetst: er ontbreekt een maat","rule_notCheckedOpening":"Niet getoetst: geen trapgat ingevuld","rule_notApplicable":"Geldt niet voor deze trap","source_secondary":"Secundaire bron","source_practice":"Vakpraktijk","yourValue":"Deze trap: {value}","f_run":"Horizontaal","f_span":"Overspanning","f_rise":"Hoogte","f_pitch":"Dakhelling","f_length":"Keperlengte","formula_rafter":"Keper = {run} × {factor} = {length}","roofConflict":"Een paar waarden spreken elkaar tegen. Er is niets aangepast.","roofFieldConflict":"Klopt niet met de andere waarden: {gap} verschil","roofEmptyBody":"Vul twee van deze in: horizontaal of overspanning, hoogte, dakhelling, keperlengte. De rest rekent Notchline uit.","roofPitchCaption":"{per12} · {degrees} · {percent}","derived":"Berekend","measuringLine":"Keperlengte gemeten langs de bovenkant, van buitenkant muurplaat tot hart nok.","notchTitle":"Vogelbek","notchHeel":"Loodsnede","notchDepth":"Diepte inkeping","notchShare":"{percent} van de keperhoogte","notchFix":"Kleinste aanpassing: een oplegvlak van {seat} of minder","notchThumbTitle":"Diepte inkeping, vuistregel ⅓","notchThumb":"Vuistregel, geen wettelijke eis","notchThumbLimit":"≤ {limit} (⅓ van {depth})","notchFormula":"Inkeping = oplegvlak × sin {angle} = {seat} × {sin} = {notch}","notchNoSeat":"Bij deze helling is het oplegvlak te diep voor de keper."},"quantity":{"riser":"Optrede","going":"Aantrede","nosing":"Neus","treadSurface":"Tredevlak","stepLength":"Staplengte (2O + A)","pitch":"Hellingshoek","uniformity":"Verschil in op- en aantrede","headroom":"Vrije hoogte","width":"Vrije breedte","flightRise":"Hoogte per trapdeel","totalRise":"Totale hoogte","risersPerFlight":"Optredes per trapdeel","landingDepth":"Diepte bordes","winders":"Verdreven treden","notchFraction":"Diepte inkeping","bearing":"Oplegging keper","tailRemainingDepth":"Resthoogte overstek","tailCantilever":"Overstek met inkeping"},"roof":{"noSolution":"Met deze waarden bestaat er geen keper. Een keper is altijd langer dan zijn horizontale lengte en zijn hoogte.","maxSeat":"Grootste oplegvlak binnen ¼ van de keperhoogte","tail":"Overstek langs de helling","total":"Keper met overstek","notchHint":"Vul de keperhoogte en het oplegvlak in om de vogelbek te toetsen."}}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">Op deze pagina</p><ol><li><a href="#how">Zo wordt het uitgerekend</a></li><li><a href="#vogelbek">De vogelbek</a></li><li><a href="#helling">Dakhelling in graden, procent en per 12</a></li></ol></nav>
+<h2 id="how">Zo wordt het uitgerekend</h2>
+<p>De gewone keper is de schuine zijde van een rechthoekige driehoek: horizontaal langs de onderkant, de hoogte langs de zijkant. De keperlengte is de horizontale lengte gedeeld door de cosinus van de dakhelling. Bij een dak van 45° is die factor 1,4142, dus 4000 mm horizontaal geeft een keper van 5657 mm. Bij 30° is de factor 1,1547 en wordt dat 4619 mm.</p><p>Twee van de vier waarden leggen de driehoek vast. Vul je er drie in die niet bij elkaar passen, dan zegt de pagina hoeveel ze verschillen en verandert er niets.</p><p>De lengte is gemeten langs de bovenkant van de keper, van de buitenkant van de muurplaat tot hart nok. Trek de halve dikte van de nokbalk eraf, horizontaal gemeten, voordat je zaagt.</p>
+<h2 id="vogelbek">De vogelbek</h2>
+<p>Het oplegvlak is de horizontale snede die op de muurplaat ligt; de loodsnede is het staande vlak erboven. De diepte van de inkeping, haaks op de keper gemeten, is het oplegvlak maal de sinus van de dakhelling. De pagina gebruikt daarvoor de grens uit de Amerikaanse IRC (R802.7.1, met verwijzing naar R502.8.1): de inkeping aan het eind van een gezaagde keper blijft binnen een kwart van de keperhoogte. Daarnaast vraagt R802.6 een oplegging van 1 ½ inch (38 mm) op hout of 3 inch (76 mm) op metselwerk. De pagina toetst beide.</p><p>Veel timmerlieden houden een derde van de keperhoogte aan. Die vuistregel staat er ook, en zo heet hij ook: een vuistregel, geen wettelijke eis. Of de keper zelf sterk genoeg is, met zijn doorsnede en overspanning, rekent je constructeur uit.</p>
+<h2 id="helling">Dakhelling in graden, procent en per 12</h2>
+<p>Een dak van 30° stijgt 57,7 %, een dak van 45° 100 %. Een helling van 18,4° is 33,3 % of 4 per 12, de Amerikaanse notatie. De pagina rekent om zodra je wisselt.</p><p>Geen hoekmeter bij de hand? Leg een waterpas van 1 m horizontaal tegen de keper en meet hoeveel hij over die meter stijgt: 577 mm is 30°.</p>
+<nav class="next" aria-label="Verder"><p class="next-h">Verder</p><ul><li><a href="../../nl/trap-berekenen/">Trap berekenen<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">Dezelfde berekening op je telefoon</h2>
+<p>De app rekent dezelfde driehoek ook met de hoogte van de muurplaat, de nok en het boeiboord, meet de dakhelling met de telefoon, en rekent in Pro hoek- en kilkepers en alle korte kepers uit, ook als twee dakvlakken een verschillende helling hebben.</p>
+<p class="small">Werkt offline. Geen account, geen advertenties, geen abonnement. Rechte trappen, de toetsing en de gewone keper zijn gratis; Pro betaal je één keer.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Binnenkort</b></span><span class="store soon"><small>App Store</small><b>Binnenkort</b></span></div>
+</aside>
+<h2>Bronnen</h2>
+<ol class="sources"><li><a href="https://codes.iccsafe.org/content/IRC2021P2/chapter-8-roof-ceiling-construction" rel="noopener">ICC, International Residential Code 2021, R802 Wood roof framing</a></li><li><a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9" rel="noopener">NIST SP 811, Appendix B.9: inch, foot</a></li></ol>
+<p class="callout">Uitkomsten zijn een hulpmiddel bij het ontwerpen. Vraag bij je gemeente na welke regels gelden voordat je gaat bouwen.</p>
+<p class="updated">Cijfers nagekeken aan de bronnen op 2 november 2026.</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Deze pagina in:</span> <a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Uitkomsten zijn een hulpmiddel bij het ontwerpen. Vraag bij je gemeente na welke regels gelden voordat je gaat bouwen.</p>
+<p>Notchline is gemaakt door MufaTech, een kleine studio die offline gereedschap bouwt dat je één keer betaalt.</p>
+<nav aria-label="Site"><a href="../../nl/">Notchline</a><a href="../../nl/trap-berekenen/">Trap berekenen</a><a href="../../nl/kepers-berekenen/">Dak berekenen</a><a href="../../nl/support/">Hulp</a><a href="../../nl/privacy/">Privacy</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../../assets/calc-ui.js"></script>
+</body>
+</html>

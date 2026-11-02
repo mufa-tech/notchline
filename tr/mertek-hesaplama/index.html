@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Mertek ve çatı eğimi hesaplama: boy ve kertme kontrolü</title>
+<meta name="description" content="Ücretsiz mertek hesabı: yatay mesafe, yükseklik, eğim ve mertek boyundan ikisiyle gerisi, saçak çıkması ve mertek yüksekliğinin dörtte birine göre kertme.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2ECDF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141619" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/notchline/tr/mertek-hesaplama/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/notchline/de/sparrenrechner/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/notchline/fr/calcul-chevron/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/notchline/nl/kepers-berekenen/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/notchline/it/calcolo-puntone/">
+<link rel="alternate" hreflang="es" href="https://mufa-tech.github.io/notchline/es/calcular-cabio/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/notchline/pt-br/calcular-caibro/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/notchline/pl/kalkulator-krokwi/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/notchline/tr/mertek-hesaplama/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Notchline">
+<meta property="og:title" content="Mertek ve çatı eğimi hesaplama: boy ve kertme kontrolü">
+<meta property="og:description" content="Ücretsiz mertek hesabı: yatay mesafe, yükseklik, eğim ve mertek boyundan ikisiyle gerisi, saçak çıkması ve mertek yüksekliğinin dörtte birine göre kertme.">
+<meta property="og:url" content="https://mufa-tech.github.io/notchline/tr/mertek-hesaplama/">
+<meta property="og:image" content="https://mufa-tech.github.io/notchline/assets/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">İçeriğe geç</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../tr/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Notchline</a>
+<nav class="main" aria-label="Ana menü"><a href="../../tr/merdiven-hesaplama/">Merdiven hesaplama</a><a href="../../tr/mertek-hesaplama/" aria-current="page">Mertek hesaplama</a><a href="../../tr/support/">Yardım</a></nav>
+<details class="langpick"><summary aria-label="Dil: Türkçe"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>TR</span></summary><nav aria-label="Dil"><a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr" aria-current="true">Türkçe</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../tr/">Notchline</a></p>
+<h1>Mertek ve çatı eğimi hesaplama</h1>
+<p class="lead">Açıklık ya da yatay mesafe, yükseklik, eğim ve mertek boyundan herhangi ikisini girin. Sayfa gerisini, saçağın eğim boyunca uzunluğunu ve oturma kertmesini mertek yüksekliğinin dörtte birine göre hesaplar.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="rafters" novalidate>
+<p class="small">Yatay mesafe ya da açıklık, yükseklik, eğim ve mertek boyundan herhangi ikisini girin. Gerisi hesaplanır.</p>
+<fieldset class="choice"><legend>Birimler</legend><div class="pills"><label class="pill"><input type="radio" name="units" value="mm" checked><span>mm</span></label><label class="pill"><input type="radio" name="units" value="cm"><span>cm</span></label><label class="pill"><input type="radio" name="units" value="ftIn"><span>ft-inç</span></label></div></fieldset>
+<fieldset class="choice"><legend>Bildiğiniz ölçü</legend><div class="pills"><label class="pill"><input type="radio" name="runkind" value="span" checked><span>Açıklık</span></label><label class="pill"><input type="radio" name="runkind" value="run"><span>Yatay mesafe</span></label></div></fieldset>
+<div class="field"><label for="r-run">Açıklık ya da yatay mesafe</label>
+<div class="joined"><input id="r-run" name="r-run" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="7200" aria-describedby="r-run-hint r-run-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-run-hint">Açıklık: duvar dış hattından karşı duvarın dış hattına. Yatay mesafe: bunun yarısı.</span><span class="err" id="r-run-err" hidden></span></div>
+<fieldset class="choice"><legend>Eğim birimi</legend><div class="pills"><label class="pill"><input type="radio" name="pitchas" value="per12"><span>Yükseklik / 12</span></label><label class="pill"><input type="radio" name="pitchas" value="degrees" checked><span>Derece</span></label><label class="pill"><input type="radio" name="pitchas" value="percent"><span>Yüzde</span></label></div></fieldset>
+<div class="field"><label for="r-pitch">Eğim</label>
+<input id="r-pitch" name="r-pitch" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="30" aria-describedby="r-pitch-err">
+<span class="err" id="r-pitch-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-rise">Yükseklik</label>
+<div class="joined"><input id="r-rise" name="r-rise" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-rise-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="err" id="r-rise-err" hidden></span></div><div class="field"><label for="r-len">Mertek boyu</label>
+<div class="joined"><input id="r-len" name="r-len" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-len-hint r-len-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-len-hint">Üst kenar boyunca</span><span class="err" id="r-len-err" hidden></span></div></div>
+<details class="more" open><summary>Saçak, kertme, yükseklikler</summary>
+<div class="field"><label for="r-oh">Saçak çıkması</label>
+<div class="joined"><input id="r-oh" name="r-oh" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="450" aria-describedby="r-oh-hint r-oh-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-oh-hint">Duvar dış hattından saçak ucuna yatay mesafe</span><span class="err" id="r-oh-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-depth">Mertek yüksekliği</label>
+<div class="joined"><input id="r-depth" name="r-depth" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="200" aria-describedby="r-depth-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="err" id="r-depth-err" hidden></span></div><div class="field"><label for="r-seat">Oturma kesimi</label>
+<div class="joined"><input id="r-seat" name="r-seat" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="80" aria-describedby="r-seat-hint r-seat-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-seat-hint">Yastık üstündeki yatay kesim, çoğunlukla yastık genişliği</span><span class="err" id="r-seat-err" hidden></span></div></div>
+<fieldset class="choice"><legend>Mertek neye oturuyor</legend><div class="pills"><label class="pill"><input type="radio" name="bearing" value="woodOrMetal" checked><span>Ahşap ya da çelik</span></label><label class="pill"><input type="radio" name="bearing" value="masonry"><span>Kâgir ya da beton</span></label></div></fieldset>
+</details>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Sonuç</h2>
+<div id="calc-nojs" class="callout"><p>Bu hesap tarayıcınızda çalışır ve JavaScript ister. Hiçbir yere bir şey gönderilmez.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Tarayıcınızda hesaplandı. Yazdığınız hiçbir şey bu sayfadan çıkmaz.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"tr-TR","decimal":",","units":"mm","pitch":"degrees","unitNames":{"mm":{"len":"mm"},"cm":{"len":"cm"},"ftIn":{"len":"ft-in"}},"placeholders":{},"errEmpty":"Bir sayı girin.","errNumber":"Bu sayfa bu sayıyı okuyamıyor.","errFeet":"Şöyle yazın: 9' 0 3/4\" ya da 108,75.","errInteger":"Yalnızca tam sayı.","errRange":"Bir merdiven ya da çatı bu ölçüde olamaz.","waiting":"Merdiveni görmek için kat yüksekliğini girin.","app":{"r_riser":"Rıht","r_going":"Basamak","r_totalRun":"Yatay boy","r_stringer":"Limon","r_angle":"Açı","r_step":"Adım (2a + b)","formula_riser":"Rıht = {rise} ÷ {risers} = {riser}","rule_within":"Sınırlar içinde","rule_over":"Sınırı {by} aşıyor","rule_under":"Sınırın {by} altında","rule_notChecked":"Kontrol edilmedi: bir değer eksik","rule_notCheckedOpening":"Kontrol edilmedi: boşluk girilmedi","rule_notApplicable":"Bu merdivende geçerli değil","source_secondary":"İkincil kaynak","source_practice":"Usta pratiği","yourValue":"Bu merdiven: {value}","f_run":"Yatay mesafe","f_span":"Açıklık","f_rise":"Yükseklik","f_pitch":"Eğim","f_length":"Mertek boyu","formula_rafter":"Mertek = {run} × {factor} = {length}","roofConflict":"Bazı değerler birbirini tutmuyor. Hiçbir şey değiştirilmedi.","roofFieldConflict":"Diğer değerleri tutmuyor: arada {gap} fark var","roofEmptyBody":"Yatay mesafe ya da açıklık, yükseklik, eğim ve mertek boyundan herhangi ikisini girin. Gerisi hesaplanır.","roofPitchCaption":"{per12} · {degrees} · {percent}","derived":"Hesaplandı","measuringLine":"Mertek boyu üst kenardan, duvar dış hattından mahya eksenine kadar ölçülür.","notchTitle":"Oturma kertmesi","notchHeel":"Dik kesim","notchDepth":"Kertme derinliği","notchShare":"Mertek yüksekliğinin {percent} kadarı","notchFix":"En az değişiklik: oturma kesimi en fazla {seat}","notchThumbTitle":"Kertme derinliği, üçte bir kuralı","notchThumb":"Usta kuralı, yönetmelik değil","notchThumbLimit":"≤ {limit} ({depth} / 3)","notchFormula":"Kertme = oturma × sin {angle} = {seat} × {sin} = {notch}","notchNoSeat":"Bu eğimde bu oturma kesimi merteğe sığmıyor."},"quantity":{"riser":"Rıht yüksekliği","going":"Basamak genişliği","nosing":"Basamak burnu","treadSurface":"Basamak yüzeyi","stepLength":"Adım (2a + b)","pitch":"Merdiven eğimi","uniformity":"Rıht ve basamak farkı","headroom":"Baş yüksekliği","width":"Net genişlik","flightRise":"Kol yüksekliği","totalRise":"Toplam yükseklik","risersPerFlight":"Koldaki rıht sayısı","landingDepth":"Sahanlık derinliği","winders":"Balanslı basamak","notchFraction":"Kertme derinliği","bearing":"Mertek oturma payı","tailRemainingDepth":"Saçak ucunda kalan et","tailCantilever":"Kertmeli saçak boyu"},"roof":{"noSolution":"Bu değerlerle mertek olmaz. Mertek, yatay mesafesinden de yüksekliğinden de uzundur.","maxSeat":"Mertek yüksekliğinin dörtte birinde kalan en uzun oturma kesimi","tail":"Eğim boyunca saçak","total":"Saçakla birlikte mertek","notchHint":"Kertmeyi kontrol etmek için mertek yüksekliğini ve oturma kesimini girin."}}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">Bu sayfada</p><ol><li><a href="#how">Nasıl hesaplanıyor</a></li><li><a href="#birdsmouth">Oturma kertmesi kontrolü</a></li><li><a href="#pitch">Derece, yüzde ve Yükseklik / 12</a></li></ol></nav>
+<h2 id="how">Nasıl hesaplanıyor</h2>
+<p>Ana mertek bir dik üçgenin uzun kenarıdır: altta yatay mesafe, yanda yükseklik. Boyu, yatay mesafe çarpı eğim katsayısıdır. Katsayı 1 ÷ cos(eğim), yüzdeyle yazarsanız √(1 + (p ÷ 100)²). 30° eğimde katsayı 1,1547; 4,00 m yatay mesafede mertek 4619 mm çıkar.</p><p>Dört değerden herhangi ikisi üçgeni belirler. Birbirini tutmayan üç değer yazarsanız sayfa aradaki farkı söyler, hiçbirini değiştirmez.</p><p>Boy, merteğin üst kenarı boyunca, duvar dış hattından mahya eksenine kadar ölçülür. Mertekler mahyada bir tahtaya ya da kirişe dayanıyorsa kesmeden önce onun yarı kalınlığını yatayda ölçüp düşün.</p>
+<h2 id="birdsmouth">Oturma kertmesi kontrolü</h2>
+<p>Oturma kesimi, merteğin duvar yastığına oturan yatay kesimidir; dik kesim onun üstündeki şakul yüzdür. Kertme derinliği, merteğe dik ölçülünce, oturma kesimi çarpı eğimin sinüsüdür. ABD yönetmeliği IRC (R802.7.1, R502.8.1’e atıfla) biçme kereste merteğin ucundaki kertmeyi mertek yüksekliğinin dörtte biriyle sınırlar. R802.6 da ahşap ya da çeliğe en az 38 mm (1½ inç), kâgire 76 mm (3 inç) oturma ister. Sayfa ikisini de kontrol eder.</p><p>Birçok usta üçte biri ölçü alır. Sayfa onu da gösterir, "Usta kuralı, yönetmelik değil" notuyla. Mertek kesiti, aralığı ve açıklığı statik hesabın işidir; onu inşaat mühendisinize bırakın.</p>
+<h2 id="pitch">Derece, yüzde ve Yükseklik / 12</h2>
+<p>%30 eğim 16,7°, %45 eğim 24,2° eder; 30° eğim %57,7, 45° eğim %100’dür. İnç kullanılan ülkelerde yazılan 6/12 eğim 26,6° ya da %50’dir. Birimi değiştirdiğinizde sayfa çevirir.</p>
+<nav class="next" aria-label="Sonraki"><p class="next-h">Sonraki</p><ul><li><a href="../../tr/merdiven-hesaplama/">Merdiven hesaplama<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">Aynı hesap cebinizde</h2>
+<p>Uygulama aynı üçgeni yastık, mahya ve saçak ucu kotlarıyla da çözer, eğimi telefonla ölçer. Pro’da köşe, dere ve bütün kısa mertekleri hesaplar, iki çatı yüzü farklı eğimde olsa da.</p>
+<p class="small">İnternetsiz çalışır. Üyelik yok, reklam yok, abonelik yok. Düz merdiven, yönetmelik kontrolü ve ana mertek ücretsiz; Pro tek ödeme.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Yakında</b></span><span class="store soon"><small>App Store</small><b>Yakında</b></span></div>
+</aside>
+<h2>Kaynaklar</h2>
+<ol class="sources"><li><a href="https://codes.iccsafe.org/content/IRC2021P2/chapter-8-roof-ceiling-construction" rel="noopener">ICC, International Residential Code 2021, R802 Wood roof framing</a></li><li><a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9" rel="noopener">NIST SP 811, Appendix B.9: inch, foot</a></li></ol>
+<p class="callout">Sonuçlar tasarımda yol gösterir, onay yerine geçmez. İşe başlamadan önce yürürlükteki kuralları belediyenizin imar müdürlüğüne sorun.</p>
+<p class="updated">Kaynaklarla son karşılaştırma: 2 Kasım 2026.</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Bu sayfanın diğer dilleri:</span> <a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Sonuçlar tasarımda yol gösterir, onay yerine geçmez. İşe başlamadan önce yürürlükteki kuralları belediyenizin imar müdürlüğüne sorun.</p>
+<p>Notchline’ı MufaTech yapıyor: bir kez ödenen, internetsiz çalışan araçlar yapan küçük bir stüdyo.</p>
+<nav aria-label="Site"><a href="../../tr/">Notchline</a><a href="../../tr/merdiven-hesaplama/">Merdiven hesaplama</a><a href="../../tr/mertek-hesaplama/">Mertek hesaplama</a><a href="../../tr/support/">Yardım</a><a href="../../tr/privacy/">Gizlilik</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../../assets/calc-ui.js"></script>
+</body>
+</html>

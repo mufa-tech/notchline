@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Sparrenlänge berechnen: Dachneigung und Kerve</title>
+<meta name="description" content="Sparrenlänge, Dachhöhe und Dachneigung aus zwei beliebigen Werten, dazu der Dachüberstand und die Kerve, geprüft gegen ¼ der Sparrenhöhe. Kostenlos.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2ECDF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141619" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/notchline/de/sparrenrechner/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/notchline/de/sparrenrechner/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/notchline/fr/calcul-chevron/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/notchline/nl/kepers-berekenen/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/notchline/it/calcolo-puntone/">
+<link rel="alternate" hreflang="es" href="https://mufa-tech.github.io/notchline/es/calcular-cabio/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/notchline/pt-br/calcular-caibro/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/notchline/pl/kalkulator-krokwi/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/notchline/tr/mertek-hesaplama/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Notchline">
+<meta property="og:title" content="Sparrenlänge berechnen: Dachneigung und Kerve">
+<meta property="og:description" content="Sparrenlänge, Dachhöhe und Dachneigung aus zwei beliebigen Werten, dazu der Dachüberstand und die Kerve, geprüft gegen ¼ der Sparrenhöhe. Kostenlos.">
+<meta property="og:url" content="https://mufa-tech.github.io/notchline/de/sparrenrechner/">
+<meta property="og:image" content="https://mufa-tech.github.io/notchline/assets/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../de/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Notchline</a>
+<nav class="main" aria-label="Hauptmenü"><a href="../../de/treppenrechner/">Treppenrechner</a><a href="../../de/sparrenrechner/" aria-current="page">Sparrenrechner</a><a href="../../de/support/">Hilfe</a></nav>
+<details class="langpick"><summary aria-label="Sprache: Deutsch"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>DE</span></summary><nav aria-label="Sprache"><a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de" aria-current="true">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../de/">Notchline</a></p>
+<h1>Sparrenrechner</h1>
+<p class="lead">Trag zwei beliebige Werte ein: Spannweite oder Grundmaß, Dachhöhe, Dachneigung, Sparrenlänge. Die Seite rechnet den Rest, den Sparren mit Dachüberstand, und prüft die Kerve gegen ¼ der Sparrenhöhe.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="rafters" novalidate>
+<p class="small">Gib zwei beliebige Werte ein: Grundmaß oder Spannweite, Dachhöhe, Dachneigung, Sparrenlänge. Den Rest rechnet die App.</p>
+<fieldset class="choice"><legend>Einheiten</legend><div class="pills"><label class="pill"><input type="radio" name="units" value="mm"><span>mm</span></label><label class="pill"><input type="radio" name="units" value="cm" checked><span>cm</span></label><label class="pill"><input type="radio" name="units" value="ftIn"><span>Fuß/Zoll</span></label></div></fieldset>
+<fieldset class="choice"><legend>Du kennst</legend><div class="pills"><label class="pill"><input type="radio" name="runkind" value="span" checked><span>Spannweite</span></label><label class="pill"><input type="radio" name="runkind" value="run"><span>Grundmaß</span></label></div></fieldset>
+<div class="field"><label for="r-run">Spannweite oder Grundmaß</label>
+<div class="joined"><input id="r-run" name="r-run" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="720" aria-describedby="r-run-hint r-run-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-run-hint">Spannweite: Außenkante bis Außenkante Wand. Grundmaß: die Hälfte davon.</span><span class="err" id="r-run-err" hidden></span></div>
+<fieldset class="choice"><legend>Neigung anzeigen in</legend><div class="pills"><label class="pill"><input type="radio" name="pitchas" value="per12"><span>Zoll pro Fuß</span></label><label class="pill"><input type="radio" name="pitchas" value="degrees" checked><span>Grad</span></label><label class="pill"><input type="radio" name="pitchas" value="percent"><span>Prozent</span></label></div></fieldset>
+<div class="field"><label for="r-pitch">Dachneigung</label>
+<input id="r-pitch" name="r-pitch" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="30" aria-describedby="r-pitch-err">
+<span class="err" id="r-pitch-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-rise">Dachhöhe</label>
+<div class="joined"><input id="r-rise" name="r-rise" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-rise-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="err" id="r-rise-err" hidden></span></div><div class="field"><label for="r-len">Sparrenlänge</label>
+<div class="joined"><input id="r-len" name="r-len" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-len-hint r-len-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-len-hint">An der Oberkante gemessen</span><span class="err" id="r-len-err" hidden></span></div></div>
+<details class="more" open><summary>Überstand, Kerve, Höhen</summary>
+<div class="field"><label for="r-oh">Dachüberstand</label>
+<div class="joined"><input id="r-oh" name="r-oh" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="45" aria-describedby="r-oh-hint r-oh-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-oh-hint">Waagerecht gemessen, von der Außenkante Wand bis zum Sparrenende</span><span class="err" id="r-oh-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-depth">Sparrenhöhe</label>
+<div class="joined"><input id="r-depth" name="r-depth" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="20" aria-describedby="r-depth-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="err" id="r-depth-err" hidden></span></div><div class="field"><label for="r-seat">Waagschnitt</label>
+<div class="joined"><input id="r-seat" name="r-seat" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="8" aria-describedby="r-seat-hint r-seat-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-seat-hint">Waagrechter Schnitt auf der Pfette, meist die Pfettenbreite</span><span class="err" id="r-seat-err" hidden></span></div></div>
+<fieldset class="choice"><legend>Der Sparren liegt auf</legend><div class="pills"><label class="pill"><input type="radio" name="bearing" value="woodOrMetal" checked><span>Holz oder Stahl</span></label><label class="pill"><input type="radio" name="bearing" value="masonry"><span>Mauerwerk oder Beton</span></label></div></fieldset>
+</details>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Ergebnis</h2>
+<div id="calc-nojs" class="callout"><p>Dieser Rechner läuft in deinem Browser und braucht JavaScript. Verschickt wird nichts.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Gerechnet wird in deinem Browser. Was du eintippst, bleibt auf dieser Seite.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"de-DE","decimal":",","units":"cm","pitch":"degrees","unitNames":{"mm":{"len":"mm"},"cm":{"len":"cm"},"ftIn":{"len":"ft-in"}},"placeholders":{},"errEmpty":"Gib eine Zahl ein.","errNumber":"Diese Zahl kann die Seite nicht lesen.","errFeet":"Schreib es so: 9' 0 3/4\" oder 108,75.","errInteger":"Nur ganze Zahlen.","errRange":"Dieser Wert passt zu keiner Treppe und keinem Dach.","waiting":"Gib die Geschosshöhe ein, dann erscheint die Treppe.","app":{"r_riser":"Steigung","r_going":"Auftritt","r_totalRun":"Lauflänge","r_stringer":"Wangenlänge","r_angle":"Neigung","r_step":"Schrittmaß (2s + a)","formula_riser":"Steigung = {rise} ÷ {risers} = {riser}","rule_within":"Innerhalb der Grenzwerte","rule_over":"{by} über dem Grenzwert","rule_under":"{by} unter dem Grenzwert","rule_notChecked":"Nicht geprüft: ein Wert fehlt","rule_notCheckedOpening":"Nicht geprüft: kein Treppenloch angegeben","rule_notApplicable":"Gilt nicht für diese Treppe","source_secondary":"Sekundärquelle","source_practice":"Handwerkspraxis","yourValue":"Dein Wert: {value}","f_run":"Grundmaß","f_span":"Spannweite","f_rise":"Dachhöhe","f_pitch":"Dachneigung","f_length":"Sparrenlänge","formula_rafter":"Sparren = {run} × {factor} = {length}","roofConflict":"Einige Werte passen nicht zusammen. Es wurde nichts geändert.","roofFieldConflict":"Passt nicht zu den anderen Werten ({gap} Unterschied)","roofEmptyBody":"Gib zwei beliebige Werte ein: Grundmaß oder Spannweite, Dachhöhe, Dachneigung, Sparrenlänge. Den Rest rechnet die App.","roofPitchCaption":"{per12} · {degrees} · {percent}","derived":"Berechnet","measuringLine":"Die Sparrenlänge wird an der Oberkante gemessen, von Außenkante Fußpfette bis Mitte First.","notchTitle":"Kerve","notchHeel":"Lotschnitt","notchDepth":"Kervtiefe","notchShare":"{percent} der Sparrenhöhe","notchFix":"Kleinste Änderung: Waagschnitt höchstens {seat}","notchThumbTitle":"Kervtiefe, Drittel-Regel","notchThumb":"Faustregel, keine Vorschrift","notchThumbLimit":"≤ {limit} (⅓ von {depth})","notchFormula":"Kervtiefe = Waagschnitt × sin {angle} = {seat} × {sin} = {notch}","notchNoSeat":"Bei dieser Neigung ist der Waagschnitt zu lang für die Sparrenhöhe."},"quantity":{"riser":"Steigung","going":"Auftritt","nosing":"Unterschneidung","treadSurface":"Stufentiefe","stepLength":"Schrittmaß (2s + a)","pitch":"Treppenneigung","uniformity":"Abweichung Steigung und Auftritt","headroom":"Durchgangshöhe","width":"Nutzbare Laufbreite","flightRise":"Laufhöhe","totalRise":"Geschosshöhe","risersPerFlight":"Steigungen je Lauf","landingDepth":"Podesttiefe","winders":"Wendelstufen","notchFraction":"Kervtiefe","bearing":"Sparrenauflager","tailRemainingDepth":"Obholz über der Kerve","tailCantilever":"Überstand ab Kerve"},"roof":{"noSolution":"Mit diesen Werten gibt es keinen Sparren. Ein Sparren ist immer länger als Grundmaß und Dachhöhe.","maxSeat":"Längster Waagschnitt innerhalb ¼ der Sparrenhöhe","tail":"Überstand entlang der Dachschräge","total":"Sparren mit Überstand","notchHint":"Trag Sparrenhöhe und Waagschnitt ein, dann wird die Kerve geprüft."}}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">Auf dieser Seite</p><ol><li><a href="#how">So wird gerechnet</a></li><li><a href="#birdsmouth">Die Kerve</a></li><li><a href="#pitch">Neigung in Grad, Prozent und Zoll pro Fuß</a></li></ol></nav>
+<h2 id="how">So wird gerechnet</h2>
+<p>Der Sparren ist die lange Seite eines rechtwinkligen Dreiecks: unten das Grundmaß, an der Seite die Dachhöhe. Seine Länge ist das Grundmaß geteilt durch den Kosinus der Dachneigung. Bei 35° und 4,00 m Grundmaß sind das 4,00 m ÷ 0,8192 = 4,883 m. Die App schreibt das als Grundmaß × Faktor, bei 35° ist der Faktor 1,2208.</p><p>Zwei der vier Werte legen das Dreieck fest. Trägst du drei ein, die nicht zusammenpassen, zeigt die Seite die Abweichung und ändert nichts.</p><p>Gemessen wird an der Sparrenoberkante, von der Außenkante Wand bis Mitte First. Stoßen die Sparren an eine Firstbohle, zieh vor dem Zuschnitt die halbe Bohlenstärke ab, waagerecht gemessen.</p>
+<h2 id="birdsmouth">Die Kerve</h2>
+<p>Die Kerve hat zwei Schnitte: Der Waagschnitt liegt auf der Pfette, der Lotschnitt ist die senkrechte Fläche darüber. Die Kervtiefe, rechtwinklig zum Sparren gemessen, ist der Waagschnitt mal Sinus der Neigung. Die Seite prüft sie gegen ¼ der Sparrenhöhe. Dieser Grenzwert ist an den amerikanischen IRC angelehnt (R802.7.1 mit Verweis auf R502.8.1). Dazu kommt das Auflager: 38 mm auf Holz oder Stahl, 76 mm auf Mauerwerk oder Beton (IRC R802.6). Die Seite prüft beides.</p><p>Eine verbreitete Faustregel lässt bis zu einem Drittel der Sparrenhöhe zu. Auch das zeigt die Seite, als Faustregel gekennzeichnet, nicht als Vorschrift. Die Bemessung selbst, also Querschnitt und Spannweite des Sparrens, ist Sache des Statikers.</p>
+<h2 id="pitch">Neigung in Grad, Prozent und Zoll pro Fuß</h2>
+<p>30° sind 57,7 %, 35° sind 70,0 %, 45° sind 100 %. Auf amerikanischen Plänen steht die Neigung in Zoll pro Fuß: 6/12 sind 26,6° oder 50 %. Die Seite rechnet beim Umschalten um.</p>
+<nav class="next" aria-label="Weiter"><p class="next-h">Weiter</p><ul><li><a href="../../de/treppenrechner/">Treppenrechner<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">Dieselbe Rechnung in der Hosentasche</h2>
+<p>Die App löst dasselbe Dreieck auch mit Höhe Fußpfette, Firsthöhe und Traufhöhe, misst die Neigung mit dem Handy und rechnet mit Pro Grat, Kehle und jeden Schifter, auch für zwei Dachflächen mit unterschiedlicher Neigung.</p>
+<p class="small">Offline. Kein Konto, keine Werbung, kein Abo. Gerade Treppen, die Regelprüfung und der Sparren sind kostenlos, Pro bezahlst du einmal.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Bald verfügbar</b></span><span class="store soon"><small>App Store</small><b>Bald verfügbar</b></span></div>
+</aside>
+<h2>Quellen</h2>
+<ol class="sources"><li><a href="https://codes.iccsafe.org/content/IRC2021P2/chapter-8-roof-ceiling-construction" rel="noopener">ICC, International Residential Code 2021, R802 Wood roof framing</a></li><li><a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9" rel="noopener">NIST SP 811, Appendix B.9: inch, foot</a></li></ol>
+<p class="callout">Alle Ergebnisse sind Planungshilfen. Klär vor dem Bau mit dem zuständigen Bauamt, welche Vorschriften aktuell gelten.</p>
+<p class="updated">Am 2. November 2026 mit den Quellen abgeglichen.</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Diese Seite auf:</span> <a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Alle Ergebnisse sind Planungshilfen. Klär vor dem Bau mit dem zuständigen Bauamt, welche Vorschriften aktuell gelten.</p>
+<p>Notchline kommt von MufaTech, einem kleinen Studio für Offline-Werkzeuge, die man einmal bezahlt.</p>
+<nav aria-label="Website"><a href="../../de/">Notchline</a><a href="../../de/treppenrechner/">Treppenrechner</a><a href="../../de/sparrenrechner/">Sparrenrechner</a><a href="../../de/support/">Hilfe</a><a href="../../de/privacy/">Datenschutz</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../../assets/calc-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Rafter calculator: length, pitch and birdsmouth check</title>
+<meta name="description" content="Free rafter calculator: common rafter length, rise and pitch from any two values, the overhang, and the birdsmouth checked against a quarter of the depth.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2ECDF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141619" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/notchline/de/sparrenrechner/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/notchline/fr/calcul-chevron/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/notchline/nl/kepers-berekenen/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/notchline/it/calcolo-puntone/">
+<link rel="alternate" hreflang="es" href="https://mufa-tech.github.io/notchline/es/calcular-cabio/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/notchline/pt-br/calcular-caibro/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/notchline/pl/kalkulator-krokwi/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/notchline/tr/mertek-hesaplama/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Notchline">
+<meta property="og:title" content="Rafter calculator: length, pitch and birdsmouth check">
+<meta property="og:description" content="Free rafter calculator: common rafter length, rise and pitch from any two values, the overhang, and the birdsmouth checked against a quarter of the depth.">
+<meta property="og:url" content="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<meta property="og:image" content="https://mufa-tech.github.io/notchline/assets/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../"><img src="../assets/icon.svg" alt="" width="32" height="32">Notchline</a>
+<nav class="main" aria-label="Main menu"><a href="../stair-calculator/">Stair calculator</a><a href="../rafter-calculator/" aria-current="page">Rafter calculator</a><a href="../support/">Help</a></nav>
+<details class="langpick"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>EN</span></summary><nav aria-label="Language"><a href="../rafter-calculator/" hreflang="en" lang="en" aria-current="true">English</a><a href="../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../">Notchline</a></p>
+<h1>Rafter calculator</h1>
+<p class="lead">Fill in any two of span or run, rise, pitch and rafter length. The page works out the rest, the tail of the overhang, and the birdsmouth notch against a quarter of the rafter depth.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="rafters" novalidate>
+<p class="small">Enter any two of run or span, rise, pitch and rafter length. The rest is worked out.</p>
+<fieldset class="choice"><legend>Units</legend><div class="pills"><label class="pill"><input type="radio" name="units" value="mm"><span>mm</span></label><label class="pill"><input type="radio" name="units" value="cm"><span>cm</span></label><label class="pill"><input type="radio" name="units" value="ftIn" checked><span>ft-in</span></label></div></fieldset>
+<fieldset class="choice"><legend>You know the</legend><div class="pills"><label class="pill"><input type="radio" name="runkind" value="span" checked><span>Span</span></label><label class="pill"><input type="radio" name="runkind" value="run"><span>Run</span></label></div></fieldset>
+<div class="field"><label for="r-run">Span or run</label>
+<div class="joined"><input id="r-run" name="r-run" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="24' 0&quot;" aria-describedby="r-run-hint r-run-err"><span class="unit" data-unit="len">ft-in</span></div>
+<span class="hint" id="r-run-hint">Span: outside of wall to outside of wall. Run: half of it.</span><span class="err" id="r-run-err" hidden></span></div>
+<fieldset class="choice"><legend>Pitch shown as</legend><div class="pills"><label class="pill"><input type="radio" name="pitchas" value="per12" checked><span>Rise per 12</span></label><label class="pill"><input type="radio" name="pitchas" value="degrees"><span>Degrees</span></label><label class="pill"><input type="radio" name="pitchas" value="percent"><span>Percent</span></label></div></fieldset>
+<div class="field"><label for="r-pitch">Pitch</label>
+<input id="r-pitch" name="r-pitch" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="6" aria-describedby="r-pitch-err">
+<span class="err" id="r-pitch-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-rise">Rise</label>
+<div class="joined"><input id="r-rise" name="r-rise" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-rise-err"><span class="unit" data-unit="len">ft-in</span></div>
+<span class="err" id="r-rise-err" hidden></span></div><div class="field"><label for="r-len">Rafter length</label>
+<div class="joined"><input id="r-len" name="r-len" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-len-hint r-len-err"><span class="unit" data-unit="len">ft-in</span></div>
+<span class="hint" id="r-len-hint">Along the top edge</span><span class="err" id="r-len-err" hidden></span></div></div>
+<details class="more" open><summary>Overhang, birdsmouth, heights</summary>
+<div class="field"><label for="r-oh">Overhang</label>
+<div class="joined"><input id="r-oh" name="r-oh" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="1' 4&quot;" aria-describedby="r-oh-hint r-oh-err"><span class="unit" data-unit="len">ft-in</span></div>
+<span class="hint" id="r-oh-hint">Level distance from the building line to the tail</span><span class="err" id="r-oh-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-depth">Rafter depth</label>
+<div class="joined"><input id="r-depth" name="r-depth" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="7 1/4&quot;" aria-describedby="r-depth-err"><span class="unit" data-unit="len">ft-in</span></div>
+<span class="err" id="r-depth-err" hidden></span></div><div class="field"><label for="r-seat">Seat cut</label>
+<div class="joined"><input id="r-seat" name="r-seat" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="3 1/2&quot;" aria-describedby="r-seat-hint r-seat-err"><span class="unit" data-unit="len">ft-in</span></div>
+<span class="hint" id="r-seat-hint">Level cut on the plate, usually the plate width</span><span class="err" id="r-seat-err" hidden></span></div></div>
+<fieldset class="choice"><legend>The rafter bears on</legend><div class="pills"><label class="pill"><input type="radio" name="bearing" value="woodOrMetal" checked><span>Wood or steel</span></label><label class="pill"><input type="radio" name="bearing" value="masonry"><span>Masonry or concrete</span></label></div></fieldset>
+</details>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Result</h2>
+<div id="calc-nojs" class="callout"><p>This calculator runs in your browser and needs JavaScript. Nothing is sent anywhere.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Worked out in your browser. Nothing you type leaves this page.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"en-US","decimal":".","units":"ftIn","pitch":"per12","unitNames":{"mm":{"len":"mm"},"cm":{"len":"cm"},"ftIn":{"len":"ft-in"}},"placeholders":{},"errEmpty":"Enter a number.","errNumber":"That is not a number this page can read.","errFeet":"Write it like 9' 0 3/4\" or 108.75.","errInteger":"Whole numbers only.","errRange":"That is outside what a stair or roof can be.","waiting":"Enter the height to see the stair.","app":{"r_riser":"Riser","r_going":"Going","r_totalRun":"Total run","r_stringer":"Stringer","r_angle":"Angle","r_step":"Step (2R + G)","formula_riser":"Riser = {rise} ÷ {risers} = {riser}","rule_within":"Within limits","rule_over":"Over the limit by {by}","rule_under":"Under the limit by {by}","rule_notChecked":"Not checked: a value is missing","rule_notCheckedOpening":"Not checked: no opening given","rule_notApplicable":"Does not apply to this stair","source_secondary":"Secondary source","source_practice":"Trade practice","yourValue":"Yours: {value}","f_run":"Run","f_span":"Span","f_rise":"Rise","f_pitch":"Pitch","f_length":"Rafter length","formula_rafter":"Rafter = {run} × {factor} = {length}","roofConflict":"Some values do not agree. Nothing was changed.","roofFieldConflict":"Does not agree with the other values: {gap} apart","roofEmptyBody":"Enter any two of run or span, rise, pitch and rafter length. The rest is worked out.","roofPitchCaption":"{per12} · {degrees} · {percent}","derived":"Worked out","measuringLine":"Rafter length is measured along the top edge, from the building line to the ridge centre.","notchTitle":"Birdsmouth","notchHeel":"Heel cut","notchDepth":"Notch depth","notchShare":"{percent} of the rafter depth","notchFix":"Smallest fix: a seat of {seat} or less","notchThumbTitle":"Notch depth, one-third rule","notchThumb":"Rule of thumb, not a code","notchThumbLimit":"≤ {limit} (⅓ of {depth})","notchFormula":"Notch = seat × sin {angle} = {seat} × {sin} = {notch}","notchNoSeat":"The seat is deeper than the rafter can take at this pitch."},"quantity":{"riser":"Riser height","going":"Going","nosing":"Nosing","treadSurface":"Tread surface","stepLength":"Step (2R + G)","pitch":"Stair angle","uniformity":"Riser and going variation","headroom":"Headroom","width":"Clear width","flightRise":"Rise of one flight","totalRise":"Total rise","risersPerFlight":"Risers in one flight","landingDepth":"Landing depth","winders":"Winders","notchFraction":"Birdsmouth depth","bearing":"Rafter bearing","tailRemainingDepth":"Tail depth left","tailCantilever":"Notched tail length"},"roof":{"noSolution":"These values cannot make a rafter. A rafter is longer than its run and its rise.","maxSeat":"Longest seat within ¼ of the depth","tail":"Tail along the slope","total":"Rafter with tail","notchHint":"Add the rafter depth and the seat to check the birdsmouth."}}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">On this page</p><ol><li><a href="#how">How it is worked out</a></li><li><a href="#birdsmouth">The birdsmouth check</a></li><li><a href="#pitch">Pitch in 12ths, degrees and percent</a></li></ol></nav>
+<h2 id="how">How it is worked out</h2>
+<p>The common rafter is the long side of a right triangle: the run along the bottom, the rise up the side. Its length is the run times the slope factor, √(144 + r²) ÷ 12 for a pitch of r in 12. A 6 in 12 roof has a factor of 1.1180, so a 12 ft run gives a 13 ft 5 in rafter.</p><p>Any two of the four sides and angles fix the triangle. If you type three that do not agree, the page says by how much and changes nothing.</p><p>The length is measured along the top edge of the rafter, from the building line to the ridge centre. Take off half the ridge board, measured level, before you cut.</p>
+<h2 id="birdsmouth">The birdsmouth check</h2>
+<p>The seat cut sits on the wall plate; the heel cut is the plumb face above it. The notch depth, measured square to the rafter, is the seat times the sine of the pitch. The IRC (R802.7.1 pointing to R502.8.1) keeps a notch at the end of a sawn rafter within a quarter of its depth, and R802.6 asks for 1 ½ in of bearing on wood or 3 in on masonry. The page checks both.</p><p>Many carpenters use one third of the depth as a rule of thumb. The page shows it too, labelled as a rule of thumb, not a code. The structure itself, rafter size and span, is for your engineer or the span tables.</p>
+<h2 id="pitch">Pitch in 12ths, degrees and percent</h2>
+<p>4 in 12 is 18.4° or 33.3 %, 6 in 12 is 26.6° or 50 %, 12 in 12 is 45° or 100 %. The page converts as you switch.</p>
+<nav class="next" aria-label="Next"><p class="next-h">Next</p><ul><li><a href="../stair-calculator/">Stair calculator<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../validation/">How the numbers are checked<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">The same maths in your pocket</h2>
+<p>The app solves the same triangle with the plate, ridge and fascia heights too, measures the pitch with the phone, and in Pro works out hips, valleys and every jack, also for two roof planes at different pitches.</p>
+<p class="small">Offline. No account, no ads, no subscription. Straight stairs, the code check and the common rafter are free; Pro is one payment.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Coming soon</b></span><span class="store soon"><small>App Store</small><b>Coming soon</b></span></div>
+</aside>
+<h2>Sources</h2>
+<ol class="sources"><li><a href="https://codes.iccsafe.org/content/IRC2021P2/chapter-8-roof-ceiling-construction" rel="noopener">ICC, International Residential Code 2021, R802 Wood roof framing</a></li><li><a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9" rel="noopener">NIST SP 811, Appendix B.9: inch, foot</a></li></ol>
+<p class="callout">Results are design aids. Check the current rules with your local building authority before you build.</p>
+<p class="updated">Checked against the sources on November 2, 2026.</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>This page in:</span> <a href="../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Results are design aids. Check the current rules with your local building authority before you build.</p>
+<p>Notchline is made by MufaTech, a small studio that builds offline tools you pay for once.</p>
+<nav aria-label="Site"><a href="../">Notchline</a><a href="../stair-calculator/">Stair calculator</a><a href="../rafter-calculator/">Rafter calculator</a><a href="../validation/">How the numbers are checked</a><a href="../support/">Help</a><a href="../privacy/">Privacy</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../assets/calc-ui.js"></script>
+</body>
+</html>

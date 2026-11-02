@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Długość krokwi: kalkulator, kąt dachu i zacios</title>
+<meta name="description" content="Darmowy kalkulator krokwi: długość krokwi, wysokość i kąt nachylenia dachu z dwóch dowolnych wartości, okap i zacios sprawdzony wobec ¼ wysokości krokwi.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2ECDF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141619" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/notchline/pl/kalkulator-krokwi/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/notchline/de/sparrenrechner/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/notchline/fr/calcul-chevron/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/notchline/nl/kepers-berekenen/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/notchline/it/calcolo-puntone/">
+<link rel="alternate" hreflang="es" href="https://mufa-tech.github.io/notchline/es/calcular-cabio/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/notchline/pt-br/calcular-caibro/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/notchline/pl/kalkulator-krokwi/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/notchline/tr/mertek-hesaplama/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Notchline">
+<meta property="og:title" content="Długość krokwi: kalkulator, kąt dachu i zacios">
+<meta property="og:description" content="Darmowy kalkulator krokwi: długość krokwi, wysokość i kąt nachylenia dachu z dwóch dowolnych wartości, okap i zacios sprawdzony wobec ¼ wysokości krokwi.">
+<meta property="og:url" content="https://mufa-tech.github.io/notchline/pl/kalkulator-krokwi/">
+<meta property="og:image" content="https://mufa-tech.github.io/notchline/assets/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Przejdź do treści</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../pl/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Notchline</a>
+<nav class="main" aria-label="Menu główne"><a href="../../pl/kalkulator-schodow/">Kalkulator schodów</a><a href="../../pl/kalkulator-krokwi/" aria-current="page">Kalkulator krokwi</a><a href="../../pl/support/">Pomoc</a></nav>
+<details class="langpick"><summary aria-label="Język: Polski"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>PL</span></summary><nav aria-label="Język"><a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl" aria-current="true">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../pl/">Notchline</a></p>
+<h1>Kalkulator krokwi</h1>
+<p class="lead">Wpisz dwie dowolne wartości: rozpiętość albo rzut, wysokość, nachylenie, długość krokwi. Strona policzy resztę, długość okapu i sprawdzi zacios wobec ¼ wysokości krokwi.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="rafters" novalidate>
+<p class="small">Podaj dowolne dwie z czterech: rzut lub rozpiętość, wysokość, nachylenie, długość krokwi. Reszta wyliczy się sama.</p>
+<fieldset class="choice"><legend>Jednostki</legend><div class="pills"><label class="pill"><input type="radio" name="units" value="mm"><span>mm</span></label><label class="pill"><input type="radio" name="units" value="cm" checked><span>cm</span></label><label class="pill"><input type="radio" name="units" value="ftIn"><span>ft-in</span></label></div></fieldset>
+<fieldset class="choice"><legend>Znasz</legend><div class="pills"><label class="pill"><input type="radio" name="runkind" value="span" checked><span>Rozpiętość</span></label><label class="pill"><input type="radio" name="runkind" value="run"><span>Rzut</span></label></div></fieldset>
+<div class="field"><label for="r-run">Rozpiętość albo rzut</label>
+<div class="joined"><input id="r-run" name="r-run" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="720" aria-describedby="r-run-hint r-run-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-run-hint">Rozpiętość: od zewnętrznego lica ściany do lica ściany naprzeciwko. Rzut: połowa rozpiętości.</span><span class="err" id="r-run-err" hidden></span></div>
+<fieldset class="choice"><legend>Jednostka nachylenia</legend><div class="pills"><label class="pill"><input type="radio" name="pitchas" value="per12"><span>Spadek na 12</span></label><label class="pill"><input type="radio" name="pitchas" value="degrees" checked><span>Stopnie</span></label><label class="pill"><input type="radio" name="pitchas" value="percent"><span>Procenty</span></label></div></fieldset>
+<div class="field"><label for="r-pitch">Nachylenie</label>
+<input id="r-pitch" name="r-pitch" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="30" aria-describedby="r-pitch-err">
+<span class="err" id="r-pitch-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-rise">Wysokość</label>
+<div class="joined"><input id="r-rise" name="r-rise" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-rise-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="err" id="r-rise-err" hidden></span></div><div class="field"><label for="r-len">Długość krokwi</label>
+<div class="joined"><input id="r-len" name="r-len" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-len-hint r-len-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-len-hint">Po górnej krawędzi</span><span class="err" id="r-len-err" hidden></span></div></div>
+<details class="more" open><summary>Okap, zacios, wysokości</summary>
+<div class="field"><label for="r-oh">Wysięg okapu</label>
+<div class="joined"><input id="r-oh" name="r-oh" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="45" aria-describedby="r-oh-hint r-oh-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-oh-hint">Odległość w poziomie od lica ściany do końca krokwi</span><span class="err" id="r-oh-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-depth">Wysokość krokwi</label>
+<div class="joined"><input id="r-depth" name="r-depth" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="20" aria-describedby="r-depth-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="err" id="r-depth-err" hidden></span></div><div class="field"><label for="r-seat">Cięcie poziome</label>
+<div class="joined"><input id="r-seat" name="r-seat" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="8" aria-describedby="r-seat-hint r-seat-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-seat-hint">Poziome oparcie na murłacie, zwykle jej szerokość</span><span class="err" id="r-seat-err" hidden></span></div></div>
+<fieldset class="choice"><legend>Krokiew opiera się na</legend><div class="pills"><label class="pill"><input type="radio" name="bearing" value="woodOrMetal" checked><span>Drewno lub stal</span></label><label class="pill"><input type="radio" name="bearing" value="masonry"><span>Mur lub beton</span></label></div></fieldset>
+</details>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Wynik</h2>
+<div id="calc-nojs" class="callout"><p>Ten kalkulator liczy w przeglądarce i potrzebuje JavaScriptu. Nic nie jest nigdzie wysyłane.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Liczone w twojej przeglądarce. Nic, co wpiszesz, nie opuszcza tej strony.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"pl-PL","decimal":",","units":"cm","pitch":"degrees","unitNames":{"mm":{"len":"mm"},"cm":{"len":"cm"},"ftIn":{"len":"ft-in"}},"placeholders":{},"errEmpty":"Wpisz liczbę.","errNumber":"Tej liczby strona nie umie odczytać.","errFeet":"Wpisz np. 9' 0 3/4\" albo 108,75.","errInteger":"Tylko liczby całkowite.","errRange":"Takich wymiarów nie mają ani schody, ani dach.","waiting":"Wpisz wysokość kondygnacji, a zobaczysz schody.","app":{"r_riser":"Wysokość stopnia","r_going":"Szerokość stopnia","r_totalRun":"Długość biegu","r_stringer":"Policzek","r_angle":"Kąt","r_step":"Krok (2h + s)","formula_riser":"Wysokość stopnia = {rise} ÷ {risers} = {riser}","rule_within":"W granicach","rule_over":"Powyżej limitu o {by}","rule_under":"Poniżej limitu o {by}","rule_notChecked":"Niesprawdzone: brak wartości","rule_notCheckedOpening":"Niesprawdzone: nie podano otworu","rule_notApplicable":"Nie dotyczy tych schodów","source_secondary":"Źródło wtórne","source_practice":"Praktyka zawodowa","yourValue":"Te schody: {value}","f_run":"Rzut","f_span":"Rozpiętość","f_rise":"Wysokość","f_pitch":"Nachylenie","f_length":"Długość krokwi","formula_rafter":"Krokiew = {run} × {factor} = {length}","roofConflict":"Wartości się nie zgadzają. Niczego nie zmieniono.","roofFieldConflict":"Nie zgadza się z pozostałymi: różnica {gap}","roofEmptyBody":"Podaj dowolne dwie z czterech: rzut lub rozpiętość, wysokość, nachylenie, długość krokwi. Reszta wyliczy się sama.","roofPitchCaption":"{per12} · {degrees} · {percent}","derived":"Wyliczone","measuringLine":"Długość krokwi mierzy się po górnej krawędzi, od lica ściany do osi kalenicy.","notchTitle":"Zacios","notchHeel":"Cięcie pionowe","notchDepth":"Głębokość zaciosu","notchShare":"{percent} wysokości krokwi","notchFix":"Najmniejsza poprawka: cięcie poziome {seat} lub krótsze","notchThumbTitle":"Głębokość zaciosu, zasada ⅓","notchThumb":"Zasada praktyczna, nie przepis","notchThumbLimit":"≤ {limit} (⅓ z {depth})","notchFormula":"Zacios = cięcie poziome × sin {angle} = {seat} × {sin} = {notch}","notchNoSeat":"Przy tym nachyleniu cięcie poziome jest za głębokie dla tej krokwi."},"quantity":{"riser":"Wysokość stopnia","going":"Szerokość stopnia","nosing":"Nosek","treadSurface":"Głębokość stopnicy","stepLength":"Krok (2h + s)","pitch":"Nachylenie schodów","uniformity":"Równe stopnie","headroom":"Prześwit","width":"Szerokość użytkowa","flightRise":"Wysokość biegu","totalRise":"Wysokość całkowita","risersPerFlight":"Liczba stopni w biegu","landingDepth":"Długość spocznika","winders":"Stopnie zabiegowe","notchFraction":"Głębokość zaciosu","bearing":"Oparcie krokwi","tailRemainingDepth":"Wysokość końca krokwi","tailCantilever":"Długość podciętego końca"},"roof":{"noSolution":"Z tych wartości nie wyjdzie krokiew. Krokiew jest dłuższa niż jej rzut i jej wysokość.","maxSeat":"Najdłuższe cięcie poziome w granicach ¼ wysokości","tail":"Okap po spadku","total":"Krokiew z okapem","notchHint":"Podaj wysokość krokwi i cięcie poziome, żeby sprawdzić zacios."}}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">Na tej stronie</p><ol><li><a href="#how">Jak to jest liczone</a></li><li><a href="#birdsmouth">Sprawdzenie zaciosu</a></li><li><a href="#pitch">Nachylenie w stopniach, procentach i na 12</a></li></ol></nav>
+<h2 id="how">Jak to jest liczone</h2>
+<p>Krokiew zwykła w dachu dwuspadowym to przeciwprostokątna trójkąta: na dole rzut, z boku wysokość. Jej długość to rzut podzielony przez cosinus kąta nachylenia. Przy 30° i rzucie 4,00 m wychodzi 4,00 ÷ 0,8660, czyli 461,9 cm.</p><p>Dwie dowolne wartości z czterech wyznaczają cały trójkąt. Jeśli wpiszesz trzy, które się nie zgadzają, strona pokaże różnicę i niczego nie zmieni.</p><p>Długość mierzy się po górnej krawędzi krokwi, od lica ściany do osi kalenicy. Zanim utniesz, odejmij połowę grubości kalenicy mierzoną w poziomie.</p>
+<h2 id="birdsmouth">Sprawdzenie zaciosu</h2>
+<p>Cięcie poziome leży na murłacie, cięcie pionowe to lico nad nim. Głębokość zaciosu, mierzona prostopadle do krokwi, to cięcie poziome razy sinus kąta nachylenia. IRC (R802.7.1, z odesłaniem do R502.8.1) ogranicza zacios na końcu krokwi z litego drewna do ¼ jej wysokości, a R802.6 wymaga oparcia 1½ cala (38 mm) na drewnie albo 3 cali (76 mm) na murze. Strona sprawdza jedno i drugie.</p><p>Wielu cieśli przyjmuje jako granicę jedną trzecią wysokości krokwi. Strona też to pokazuje, z dopiskiem, że to zasada praktyczna, a nie przepis. Przekrój krokwi i jej rozpiętość to sprawa konstruktora.</p>
+<h2 id="pitch">Nachylenie w stopniach, procentach i na 12</h2>
+<p>30° to 57,7 %, 45° to 100 %. Z amerykańskich planów: 4 na 12 to 18,4° albo 33,3 %, 6 na 12 to 26,6° albo 50 %, 12 na 12 to 45°. Strona przelicza, gdy zmienisz jednostkę.</p>
+<nav class="next" aria-label="Dalej"><p class="next-h">Dalej</p><ul><li><a href="../../pl/kalkulator-schodow/">Kalkulator schodów<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">Te same obliczenia w kieszeni</h2>
+<p>Aplikacja liczy ten sam trójkąt także z wysokością murłaty, kalenicy i okapu, mierzy nachylenie telefonem, a w Pro liczy krokwie narożne, koszowe i każdą kulawkę, również gdy połacie mają różne nachylenie.</p>
+<p class="small">Działa bez internetu. Bez konta, bez reklam, bez abonamentu. Schody proste, sprawdzenie przepisów i krokiew zwykła są za darmo, Pro kupujesz jedną płatnością.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Wkrótce</b></span><span class="store soon"><small>App Store</small><b>Wkrótce</b></span></div>
+</aside>
+<h2>Źródła</h2>
+<ol class="sources"><li><a href="https://codes.iccsafe.org/content/IRC2021P2/chapter-8-roof-ceiling-construction" rel="noopener">ICC, International Residential Code 2021, R802 Wood roof framing</a></li><li><a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9" rel="noopener">NIST SP 811, Appendix B.9: inch, foot</a></li></ol>
+<p class="callout">Wyniki są pomocą przy projektowaniu. Przed budową sprawdź aktualne przepisy w urzędzie, który wydaje pozwolenia na budowę.</p>
+<p class="updated">Sprawdzono ze źródłami: 2 listopada 2026.</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Ta strona w innym języku:</span> <a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Wyniki są pomocą przy projektowaniu. Przed budową sprawdź aktualne przepisy w urzędzie, który wydaje pozwolenia na budowę.</p>
+<p>Notchline robi MufaTech, małe studio, które tworzy narzędzia działające bez internetu. Płacisz za nie raz.</p>
+<nav aria-label="Strona"><a href="../../pl/">Notchline</a><a href="../../pl/kalkulator-schodow/">Kalkulator schodów</a><a href="../../pl/kalkulator-krokwi/">Kalkulator krokwi</a><a href="../../pl/support/">Pomoc</a><a href="../../pl/privacy/">Prywatność</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../../assets/calc-ui.js"></script>
+</body>
+</html>

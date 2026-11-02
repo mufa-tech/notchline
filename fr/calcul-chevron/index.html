@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Calcul chevron : longueur, pente et entaille</title>
+<meta name="description" content="Calcul de chevron gratuit : longueur, hauteur et pente à partir de deux valeurs, le débord, et l’entaille vérifiée au quart de la hauteur du chevron.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2ECDF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141619" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/notchline/fr/calcul-chevron/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/notchline/de/sparrenrechner/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/notchline/fr/calcul-chevron/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/notchline/nl/kepers-berekenen/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/notchline/it/calcolo-puntone/">
+<link rel="alternate" hreflang="es" href="https://mufa-tech.github.io/notchline/es/calcular-cabio/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/notchline/pt-br/calcular-caibro/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/notchline/pl/kalkulator-krokwi/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/notchline/tr/mertek-hesaplama/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Notchline">
+<meta property="og:title" content="Calcul chevron : longueur, pente et entaille">
+<meta property="og:description" content="Calcul de chevron gratuit : longueur, hauteur et pente à partir de deux valeurs, le débord, et l’entaille vérifiée au quart de la hauteur du chevron.">
+<meta property="og:url" content="https://mufa-tech.github.io/notchline/fr/calcul-chevron/">
+<meta property="og:image" content="https://mufa-tech.github.io/notchline/assets/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../fr/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Notchline</a>
+<nav class="main" aria-label="Menu principal"><a href="../../fr/calcul-escalier/">Calcul d’escalier</a><a href="../../fr/calcul-chevron/" aria-current="page">Calcul de chevron</a><a href="../../fr/support/">Aide</a></nav>
+<details class="langpick"><summary aria-label="Langue: Français"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>FR</span></summary><nav aria-label="Langue"><a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr" aria-current="true">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../fr/">Notchline</a></p>
+<h1>Calcul de chevron</h1>
+<p class="lead">Remplissez deux valeurs au choix parmi portée ou projection, hauteur, pente et longueur du chevron. La page calcule le reste, la longueur du débord et la profondeur d’entaille, comparée au quart de la hauteur du chevron.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="rafters" novalidate>
+<p class="small">Saisissez deux valeurs au choix : projection ou portée, hauteur, pente, longueur du chevron. Le reste est calculé.</p>
+<fieldset class="choice"><legend>Unités</legend><div class="pills"><label class="pill"><input type="radio" name="units" value="mm"><span>mm</span></label><label class="pill"><input type="radio" name="units" value="cm" checked><span>cm</span></label><label class="pill"><input type="radio" name="units" value="ftIn"><span>ft-in</span></label></div></fieldset>
+<fieldset class="choice"><legend>Vous connaissez la</legend><div class="pills"><label class="pill"><input type="radio" name="runkind" value="span" checked><span>Portée</span></label><label class="pill"><input type="radio" name="runkind" value="run"><span>Projection</span></label></div></fieldset>
+<div class="field"><label for="r-run">Portée ou projection</label>
+<div class="joined"><input id="r-run" name="r-run" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="720" aria-describedby="r-run-hint r-run-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-run-hint">Portée : d’un nu extérieur de mur à l’autre. Projection : la moitié.</span><span class="err" id="r-run-err" hidden></span></div>
+<fieldset class="choice"><legend>Pente affichée en</legend><div class="pills"><label class="pill"><input type="radio" name="pitchas" value="per12"><span>Pour 12</span></label><label class="pill"><input type="radio" name="pitchas" value="degrees" checked><span>Degrés</span></label><label class="pill"><input type="radio" name="pitchas" value="percent"><span>Pourcentage</span></label></div></fieldset>
+<div class="field"><label for="r-pitch">Pente</label>
+<input id="r-pitch" name="r-pitch" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="30" aria-describedby="r-pitch-err">
+<span class="err" id="r-pitch-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-rise">Hauteur</label>
+<div class="joined"><input id="r-rise" name="r-rise" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-rise-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="err" id="r-rise-err" hidden></span></div><div class="field"><label for="r-len">Longueur du chevron</label>
+<div class="joined"><input id="r-len" name="r-len" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-len-hint r-len-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-len-hint">Mesurée sur le dessus</span><span class="err" id="r-len-err" hidden></span></div></div>
+<details class="more" open><summary>Débord, entaille, hauteurs</summary>
+<div class="field"><label for="r-oh">Débord</label>
+<div class="joined"><input id="r-oh" name="r-oh" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="45" aria-describedby="r-oh-hint r-oh-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-oh-hint">À l’horizontale, du nu du mur au bout du chevron</span><span class="err" id="r-oh-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-depth">Hauteur du chevron</label>
+<div class="joined"><input id="r-depth" name="r-depth" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="20" aria-describedby="r-depth-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="err" id="r-depth-err" hidden></span></div><div class="field"><label for="r-seat">Assise</label>
+<div class="joined"><input id="r-seat" name="r-seat" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="8" aria-describedby="r-seat-hint r-seat-err"><span class="unit" data-unit="len">cm</span></div>
+<span class="hint" id="r-seat-hint">Coupe de niveau sur la sablière, en général sa largeur</span><span class="err" id="r-seat-err" hidden></span></div></div>
+<fieldset class="choice"><legend>Le chevron repose sur</legend><div class="pills"><label class="pill"><input type="radio" name="bearing" value="woodOrMetal" checked><span>Bois ou acier</span></label><label class="pill"><input type="radio" name="bearing" value="masonry"><span>Maçonnerie ou béton</span></label></div></fieldset>
+</details>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Résultat</h2>
+<div id="calc-nojs" class="callout"><p>Ce calcul se fait dans votre navigateur et demande JavaScript. Rien n’est envoyé.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Calculé dans votre navigateur. Rien de ce que vous saisissez ne quitte cette page.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"fr-FR","decimal":",","units":"cm","pitch":"degrees","unitNames":{"mm":{"len":"mm"},"cm":{"len":"cm"},"ftIn":{"len":"ft-in"}},"placeholders":{},"errEmpty":"Saisissez un nombre.","errNumber":"Cette page ne sait pas lire ce nombre.","errFeet":"En pieds-pouces, écrivez par exemple 9' 0 3/4\" ou 108,75.","errInteger":"Nombres entiers uniquement.","errRange":"Aucun escalier ni aucun toit n’a cette cote.","waiting":"Saisissez la hauteur à monter pour voir l’escalier.","app":{"r_riser":"Hauteur de marche","r_going":"Giron","r_totalRun":"Reculement","r_stringer":"Limon","r_angle":"Angle","r_step":"Blondel (2h + g)","formula_riser":"Hauteur de marche = {rise} ÷ {risers} = {riser}","rule_within":"Dans les limites","rule_over":"{by} au-dessus de la limite","rule_under":"{by} en dessous de la limite","rule_notChecked":"Non vérifié : valeur manquante","rule_notCheckedOpening":"Non vérifié : trémie non saisie","rule_notApplicable":"Ne concerne pas cet escalier","source_secondary":"Source secondaire","source_practice":"Règles de l’art","yourValue":"Votre valeur : {value}","f_run":"Projection","f_span":"Portée","f_rise":"Hauteur","f_pitch":"Pente","f_length":"Longueur du chevron","formula_rafter":"Chevron = {run} × {factor} = {length}","roofConflict":"Des valeurs se contredisent. Rien n’a été modifié.","roofFieldConflict":"Ne concorde pas avec les autres valeurs : écart de {gap}","roofEmptyBody":"Saisissez deux valeurs au choix : projection ou portée, hauteur, pente, longueur du chevron. Le reste est calculé.","roofPitchCaption":"{per12} · {degrees} · {percent}","derived":"Calculé","measuringLine":"La longueur du chevron se mesure sur le dessus, du nu extérieur de la sablière à l’axe du faîtage.","notchTitle":"Entaille","notchHeel":"Coupe d’aplomb","notchDepth":"Profondeur d’entaille","notchShare":"{percent} de la hauteur du chevron","notchFix":"Correction minimale : une assise de {seat} au plus","notchThumbTitle":"Profondeur d’entaille, règle du tiers","notchThumb":"Usage du métier, pas une obligation réglementaire","notchThumbLimit":"≤ {limit} (⅓ de {depth})","notchFormula":"Entaille = assise × sin {angle} = {seat} × {sin} = {notch}","notchNoSeat":"À cette pente, l’assise est trop profonde pour ce chevron."},"quantity":{"riser":"Hauteur de marche","going":"Giron","nosing":"Nez de marche","treadSurface":"Profondeur de marche","stepLength":"Blondel (2h + g)","pitch":"Angle de l’escalier","uniformity":"Régularité des marches","headroom":"Échappée","width":"Largeur utile","flightRise":"Hauteur d’une volée","totalRise":"Hauteur à monter","risersPerFlight":"Contremarches par volée","landingDepth":"Profondeur du palier","winders":"Marches balancées","notchFraction":"Profondeur d’entaille","bearing":"Appui du chevron","tailRemainingDepth":"Bois restant au débord","tailCantilever":"Longueur du débord entaillé"},"roof":{"noSolution":"Ces valeurs ne donnent pas de chevron. Un chevron est plus long que sa projection et que sa hauteur.","maxSeat":"Assise la plus longue dans le quart de la hauteur","tail":"Débord le long de la pente","total":"Chevron avec débord","notchHint":"Ajoutez la hauteur du chevron et l’assise pour vérifier l’entaille."}}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">Sur cette page</p><ol><li><a href="#how">Comment le chevron est calculé</a></li><li><a href="#birdsmouth">La vérification de l’entaille</a></li><li><a href="#pitch">Pente en degrés, en pourcentage et pour 12</a></li></ol></nav>
+<h2 id="how">Comment le chevron est calculé</h2>
+<p>Le chevron est le grand côté d’un triangle rectangle : la projection en bas, la hauteur sur le côté. Sa longueur vaut la projection divisée par le cosinus de la pente. À 30°, le coefficient est de 1,1547 : une projection de 4,00 m donne un chevron de 4,62 m. En pente pour 12, la même chose s’écrit √(144 + r²) ÷ 12.</p><p>Deux des quatre valeurs suffisent à fixer le triangle. Si vous en saisissez trois qui ne concordent pas, la page donne l’écart et ne touche à rien.</p><p>La longueur se mesure sur le dessus du chevron, du nu extérieur de la sablière à l’axe du faîtage. Retirez la demi-épaisseur du faîtage, prise à l’horizontale, avant de couper.</p>
+<h2 id="birdsmouth">La vérification de l’entaille</h2>
+<p>L’assise repose sur la sablière ; la coupe d’aplomb est la face verticale au-dessus. La profondeur d’entaille, mesurée d’équerre au chevron, vaut l’assise multipliée par le sinus de la pente. La page reprend la limite de l’IRC américain (R802.7.1, qui renvoie à R502.8.1) : au bout d’un chevron en bois massif, l’entaille ne dépasse pas le quart de sa hauteur. R802.6 demande aussi 3,8 cm d’appui sur bois et 7,6 cm sur maçonnerie. La page vérifie les deux.</p><p>Beaucoup de charpentiers retiennent le tiers de la hauteur. La page l’affiche aussi, comme usage du métier, pas comme obligation. La structure elle-même, section et portée du chevron, se dimensionne avec votre bureau d’études ou votre charpentier.</p>
+<h2 id="pitch">Pente en degrés, en pourcentage et pour 12</h2>
+<p>30 % font 16,7°, 50 % font 26,6°, 100 % font 45°. Dans l’autre sens, 30° font 57,7 %. Les plans nord-américains donnent la pente pour 12 : 6 pour 12, c’est 50 % ou 26,6°. La page convertit dès que vous changez d’affichage.</p>
+<nav class="next" aria-label="Suite"><p class="next-h">Suite</p><ul><li><a href="../../fr/calcul-escalier/">Calcul d’escalier<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">Le même calcul dans votre poche</h2>
+<p>L’appli résout le même triangle avec les hauteurs de sablière, au faîtage et à l’égout, mesure la pente avec le téléphone et, en Pro, calcule arêtiers, noues et chaque empannon, aussi pour deux pans de pentes différentes.</p>
+<p class="small">Hors ligne. Sans compte, sans pub, sans abonnement. L’escalier droit, la vérification des règles et le chevron sont gratuits ; Pro se paie une seule fois.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Bientôt</b></span><span class="store soon"><small>App Store</small><b>Bientôt</b></span></div>
+</aside>
+<h2>Sources</h2>
+<ol class="sources"><li><a href="https://codes.iccsafe.org/content/IRC2021P2/chapter-8-roof-ceiling-construction" rel="noopener">ICC, International Residential Code 2021, R802 Wood roof framing</a></li><li><a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9" rel="noopener">NIST SP 811, Appendix B.9: inch, foot</a></li></ol>
+<p class="callout">Les résultats sont une aide à la conception. Avant de construire, vérifiez les règles en vigueur auprès du service urbanisme de votre mairie.</p>
+<p class="updated">Comparé aux sources le 2 novembre 2026.</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Cette page en :</span> <a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Les résultats sont une aide à la conception. Avant de construire, vérifiez les règles en vigueur auprès du service urbanisme de votre mairie.</p>
+<p>Notchline est fait par MufaTech, un petit studio qui crée des outils hors ligne que l’on paie une seule fois.</p>
+<nav aria-label="Site"><a href="../../fr/">Notchline</a><a href="../../fr/calcul-escalier/">Calcul d’escalier</a><a href="../../fr/calcul-chevron/">Calcul de chevron</a><a href="../../fr/support/">Aide</a><a href="../../fr/privacy/">Confidentialité</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../../assets/calc-ui.js"></script>
+</body>
+</html>

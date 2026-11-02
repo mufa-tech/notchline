@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Calcular cabio y pendiente: largo, alero y pico de pájaro</title>
+<meta name="description" content="Calculadora de cabios gratis: largo del cabio, altura y pendiente del tejado con dos datos cualesquiera, el alero y el pico de pájaro frente a ¼ del canto.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2ECDF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141619" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/notchline/es/calcular-cabio/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/notchline/de/sparrenrechner/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/notchline/fr/calcul-chevron/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/notchline/nl/kepers-berekenen/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/notchline/it/calcolo-puntone/">
+<link rel="alternate" hreflang="es" href="https://mufa-tech.github.io/notchline/es/calcular-cabio/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/notchline/pt-br/calcular-caibro/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/notchline/pl/kalkulator-krokwi/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/notchline/tr/mertek-hesaplama/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Notchline">
+<meta property="og:title" content="Calcular cabio y pendiente: largo, alero y pico de pájaro">
+<meta property="og:description" content="Calculadora de cabios gratis: largo del cabio, altura y pendiente del tejado con dos datos cualesquiera, el alero y el pico de pájaro frente a ¼ del canto.">
+<meta property="og:url" content="https://mufa-tech.github.io/notchline/es/calcular-cabio/">
+<meta property="og:image" content="https://mufa-tech.github.io/notchline/assets/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../es/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Notchline</a>
+<nav class="main" aria-label="Menú principal"><a href="../../es/calcular-escalera/">Calcular escalera</a><a href="../../es/calcular-cabio/" aria-current="page">Calcular cabio</a><a href="../../es/support/">Ayuda</a></nav>
+<details class="langpick"><summary aria-label="Idioma: Español"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>ES</span></summary><nav aria-label="Idioma"><a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es" aria-current="true">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../es/">Notchline</a></p>
+<h1>Calcular cabio y pendiente</h1>
+<p class="lead">Rellena dos datos cualesquiera: la luz o la proyección, la altura, la pendiente del tejado (techo) y el largo del cabio (viga). La página calcula el resto, el vuelo del alero y la muesca del pico de pájaro frente a 1/4 del canto del cabio.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="rafters" novalidate>
+<p class="small">Escribe dos de estos, los que quieras: proyección o luz, altura, pendiente o largo del cabio. Lo demás se calcula.</p>
+<fieldset class="choice"><legend>Unidades</legend><div class="pills"><label class="pill"><input type="radio" name="units" value="mm" checked><span>mm</span></label><label class="pill"><input type="radio" name="units" value="cm"><span>cm</span></label><label class="pill"><input type="radio" name="units" value="ftIn"><span>pies-pulg.</span></label></div></fieldset>
+<fieldset class="choice"><legend>Lo que tienes medido</legend><div class="pills"><label class="pill"><input type="radio" name="runkind" value="span" checked><span>Luz</span></label><label class="pill"><input type="radio" name="runkind" value="run"><span>Proyección</span></label></div></fieldset>
+<div class="field"><label for="r-run">Luz o proyección</label>
+<div class="joined"><input id="r-run" name="r-run" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="7200" aria-describedby="r-run-hint r-run-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-run-hint">Luz: de cara exterior a cara exterior de los muros. Proyección: la mitad.</span><span class="err" id="r-run-err" hidden></span></div>
+<fieldset class="choice"><legend>Pendiente en</legend><div class="pills"><label class="pill"><input type="radio" name="pitchas" value="per12"><span>Altura por 12</span></label><label class="pill"><input type="radio" name="pitchas" value="degrees" checked><span>Grados</span></label><label class="pill"><input type="radio" name="pitchas" value="percent"><span>Porcentaje</span></label></div></fieldset>
+<div class="field"><label for="r-pitch">Pendiente</label>
+<input id="r-pitch" name="r-pitch" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="30" aria-describedby="r-pitch-err">
+<span class="err" id="r-pitch-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-rise">Altura</label>
+<div class="joined"><input id="r-rise" name="r-rise" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-rise-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="err" id="r-rise-err" hidden></span></div><div class="field"><label for="r-len">Largo del cabio</label>
+<div class="joined"><input id="r-len" name="r-len" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-len-hint r-len-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-len-hint">Por el canto superior</span><span class="err" id="r-len-err" hidden></span></div></div>
+<details class="more" open><summary>Alero, pico de pájaro, alturas</summary>
+<div class="field"><label for="r-oh">Alero</label>
+<div class="joined"><input id="r-oh" name="r-oh" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="450" aria-describedby="r-oh-hint r-oh-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-oh-hint">Distancia en horizontal de la línea del muro al extremo del alero</span><span class="err" id="r-oh-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-depth">Canto del cabio</label>
+<div class="joined"><input id="r-depth" name="r-depth" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="200" aria-describedby="r-depth-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="err" id="r-depth-err" hidden></span></div><div class="field"><label for="r-seat">Asiento</label>
+<div class="joined"><input id="r-seat" name="r-seat" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="80" aria-describedby="r-seat-hint r-seat-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-seat-hint">Corte horizontal que apoya en el durmiente; suele coincidir con su ancho</span><span class="err" id="r-seat-err" hidden></span></div></div>
+<fieldset class="choice"><legend>El cabio apoya en</legend><div class="pills"><label class="pill"><input type="radio" name="bearing" value="woodOrMetal" checked><span>Madera o acero</span></label><label class="pill"><input type="radio" name="bearing" value="masonry"><span>Mampostería u hormigón</span></label></div></fieldset>
+</details>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Resultado</h2>
+<div id="calc-nojs" class="callout"><p>Esta calculadora funciona en tu navegador y necesita JavaScript. No se envía nada a ningún sitio.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Se calcula en tu navegador. Nada de lo que escribes sale de esta página.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"es-ES","decimal":",","units":"mm","pitch":"degrees","unitNames":{"mm":{"len":"mm"},"cm":{"len":"cm"},"ftIn":{"len":"ft-in"}},"placeholders":{},"errEmpty":"Escribe un número.","errNumber":"Esta página no sabe leer ese número.","errFeet":"Escríbelo así: 9' 0 3/4\" o 108,75.","errInteger":"Solo números enteros.","errRange":"Eso se sale de lo que puede medir una escalera o un tejado.","waiting":"Escribe la altura para ver la escalera.","app":{"r_riser":"Contrahuella","r_going":"Huella","r_totalRun":"Largo en planta","r_stringer":"Zanca","r_angle":"Ángulo","r_step":"Paso (2C + H)","formula_riser":"Contrahuella = {rise} ÷ {risers} = {riser}","rule_within":"Dentro de los límites","rule_over":"Supera el límite en {by}","rule_under":"Queda {by} por debajo del límite","rule_notChecked":"Sin comprobar: falta un valor","rule_notCheckedOpening":"Sin comprobar: no hay hueco","rule_notApplicable":"No se aplica a esta escalera","source_secondary":"Fuente secundaria","source_practice":"Práctica del oficio","yourValue":"Tu medida: {value}","f_run":"Proyección","f_span":"Luz","f_rise":"Altura","f_pitch":"Pendiente","f_length":"Largo del cabio","formula_rafter":"Cabio = {run} × {factor} = {length}","roofConflict":"Algunos valores no cuadran. No se cambió nada.","roofFieldConflict":"No cuadra con los demás valores: {gap} de diferencia","roofEmptyBody":"Escribe dos de estos, los que quieras: proyección o luz, altura, pendiente o largo del cabio. Lo demás se calcula.","roofPitchCaption":"{per12} · {degrees} · {percent}","derived":"Calculado","measuringLine":"El largo del cabio se mide por el canto superior, desde la línea del muro hasta el eje de la cumbrera.","notchTitle":"Pico de pájaro","notchHeel":"Talón","notchDepth":"Fondo de muesca","notchShare":"{percent} del canto del cabio","notchFix":"Corrección mínima: un asiento de {seat} o menos","notchThumbTitle":"Muesca, regla del tercio","notchThumb":"Regla práctica, no norma","notchThumbLimit":"≤ {limit} (⅓ de {depth})","notchFormula":"Muesca = asiento × sen {angle} = {seat} × {sin} = {notch}","notchNoSeat":"Con esta pendiente, el asiento pide más muesca de la que admite el cabio."},"quantity":{"riser":"Contrahuella","going":"Huella","nosing":"Bocel","treadSurface":"Superficie de huella","stepLength":"Paso (2C + H)","pitch":"Inclinación","uniformity":"Variación de contrahuella y huella","headroom":"Altura libre","width":"Anchura útil","flightRise":"Altura de tramo","totalRise":"Altura total","risersPerFlight":"Peldaños por tramo","landingDepth":"Fondo del descansillo","winders":"Compensados","notchFraction":"Fondo de la muesca","bearing":"Apoyo del cabio","tailRemainingDepth":"Canto en el vuelo","tailCantilever":"Vuelo con muesca"},"roof":{"noSolution":"Con estos valores no sale un cabio. Un cabio es más largo que su proyección y que su altura.","maxSeat":"Asiento más largo dentro de ¼ del canto","tail":"Vuelo medido por la pendiente","total":"Cabio con el vuelo","notchHint":"Añade el canto del cabio y el asiento para comprobar el pico de pájaro."}}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">En esta página</p><ol><li><a href="#how">Cómo se calcula</a></li><li><a href="#birdsmouth">El pico de pájaro</a></li><li><a href="#pitch">Pendiente en grados, en % y en x/12</a></li></ol></nav>
+<h2 id="how">Cómo se calcula</h2>
+<p>El cabio es la hipotenusa de un triángulo rectángulo: la proyección abajo y la altura en el lado. Su largo es la proyección por el factor de pendiente, 1 ÷ cos α para una pendiente de α grados. A 30° el factor es 1,1547, así que una proyección de 4,00 m da un cabio de 4,62 m.</p><p>Dos de los cuatro datos bastan para fijar el triángulo. Si escribes tres que no cuadran, la página te dice en cuánto difieren y no cambia nada.</p><p>El largo se mide por el canto superior del cabio, desde la línea del muro hasta el eje de la cumbrera. Antes de cortar, descuenta la mitad del grosor de la cumbrera, medida en horizontal.</p>
+<h2 id="birdsmouth">El pico de pájaro</h2>
+<p>El asiento es el corte horizontal que apoya en el durmiente; el talón es la cara a plomo que queda encima. El fondo de la muesca, medido en perpendicular al cabio, es el asiento por el seno de la pendiente. La comprobación usa el límite del IRC estadounidense (R802.7.1, que remite a R502.8.1): en el extremo de un cabio de madera aserrada, la muesca no pasa de 1/4 del canto. R802.6 pide además 38 mm de apoyo sobre madera o 76 mm sobre mampostería (1 ½ y 3 pulgadas). La página comprueba las dos cosas.</p><p>Muchos carpinteros usan un tercio del canto como regla práctica. La página también la enseña, marcada como regla práctica, no como norma. La estructura en sí, la sección del cabio y la luz que salva, la tiene que calcular un técnico.</p>
+<h2 id="pitch">Pendiente en grados, en % y en x/12</h2>
+<p>Un 30 % son 16,7°, un 50 % son 26,6° y un 100 % son 45°. Al revés, 30° son un 57,7 %. Si te llegan planos con la pendiente en x/12, 6/12 es lo mismo que un 50 %. La página convierte al momento cuando cambias de unidad.</p>
+<nav class="next" aria-label="Siguiente"><p class="next-h">Siguiente</p><ul><li><a href="../../es/calcular-escalera/">Calcular escalera<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">Las mismas cuentas, en el bolsillo</h2>
+<p>La app resuelve el mismo triángulo también con las alturas del durmiente, la cumbrera y el alero, mide la pendiente con el teléfono y, con Pro, calcula limatesas, limahoyas y cada cabio corto, también con dos faldones de distinta pendiente.</p>
+<p class="small">Sin conexión. Sin cuenta, sin anuncios, sin suscripción. La escalera recta, la comprobación con la normativa y el cabio son gratis; Pro es un solo pago.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Próximamente</b></span><span class="store soon"><small>App Store</small><b>Próximamente</b></span></div>
+</aside>
+<h2>Fuentes</h2>
+<ol class="sources"><li><a href="https://codes.iccsafe.org/content/IRC2021P2/chapter-8-roof-ceiling-construction" rel="noopener">ICC, International Residential Code 2021, R802 Wood roof framing</a></li><li><a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9" rel="noopener">NIST SP 811, Appendix B.9: inch, foot</a></li></ol>
+<p class="callout">Los resultados son una ayuda para el diseño. Antes de construir, consulta la normativa vigente en el área de urbanismo de tu municipio.</p>
+<p class="updated">Revisado con las fuentes el 2 de noviembre de 2026.</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Esta página en:</span> <a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it">Italiano</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Los resultados son una ayuda para el diseño. Antes de construir, consulta la normativa vigente en el área de urbanismo de tu municipio.</p>
+<p>Notchline es de MufaTech, un estudio pequeño que hace herramientas sin conexión que pagas una sola vez.</p>
+<nav aria-label="Web"><a href="../../es/">Notchline</a><a href="../../es/calcular-escalera/">Calcular escalera</a><a href="../../es/calcular-cabio/">Calcular cabio</a><a href="../../es/support/">Ayuda</a><a href="../../es/privacy/">Privacidad</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../../assets/calc-ui.js"></script>
+</body>
+</html>

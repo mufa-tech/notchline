@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Calcolo falda e puntone: lunghezza, pendenza, intaglio</title>
+<meta name="description" content="Calcolo del puntone gratuito: lunghezza, dislivello e pendenza da due valori qualsiasi, lo sporto e l’intaglio d’appoggio confrontato con ¼ dell’altezza.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2ECDF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141619" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/notchline/it/calcolo-puntone/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="alternate" hreflang="de" href="https://mufa-tech.github.io/notchline/de/sparrenrechner/">
+<link rel="alternate" hreflang="fr" href="https://mufa-tech.github.io/notchline/fr/calcul-chevron/">
+<link rel="alternate" hreflang="nl" href="https://mufa-tech.github.io/notchline/nl/kepers-berekenen/">
+<link rel="alternate" hreflang="it" href="https://mufa-tech.github.io/notchline/it/calcolo-puntone/">
+<link rel="alternate" hreflang="es" href="https://mufa-tech.github.io/notchline/es/calcular-cabio/">
+<link rel="alternate" hreflang="pt-BR" href="https://mufa-tech.github.io/notchline/pt-br/calcular-caibro/">
+<link rel="alternate" hreflang="pl" href="https://mufa-tech.github.io/notchline/pl/kalkulator-krokwi/">
+<link rel="alternate" hreflang="tr" href="https://mufa-tech.github.io/notchline/tr/mertek-hesaplama/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/notchline/rafter-calculator/">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Notchline">
+<meta property="og:title" content="Calcolo falda e puntone: lunghezza, pendenza, intaglio">
+<meta property="og:description" content="Calcolo del puntone gratuito: lunghezza, dislivello e pendenza da due valori qualsiasi, lo sporto e l’intaglio d’appoggio confrontato con ¼ dell’altezza.">
+<meta property="og:url" content="https://mufa-tech.github.io/notchline/it/calcolo-puntone/">
+<meta property="og:image" content="https://mufa-tech.github.io/notchline/assets/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../it/"><img src="../../assets/icon.svg" alt="" width="32" height="32">Notchline</a>
+<nav class="main" aria-label="Menu principale"><a href="../../it/calcolo-scale/">Calcolo scale</a><a href="../../it/calcolo-puntone/" aria-current="page">Calcolo puntone</a><a href="../../it/support/">Aiuto</a></nav>
+<details class="langpick"><summary aria-label="Lingua: Italiano"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>IT</span></summary><nav aria-label="Lingua"><a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../it/calcolo-puntone/" hreflang="it" lang="it" aria-current="true">Italiano</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../../it/">Notchline</a></p>
+<h1>Calcolo falda e puntone</h1>
+<p class="lead">Inserisci due valori a scelta tra luce o proiezione, dislivello, pendenza e lunghezza del puntone. La pagina calcola il resto, lo sporto lungo la falda e l’intaglio d’appoggio rispetto a un quarto dell’altezza del puntone.</p>
+<div class="calc">
+<form class="panel" id="calc-form" data-calc="rafters" novalidate>
+<p class="small">Inserisci due valori a scelta tra proiezione (o luce), dislivello, pendenza e lunghezza del puntone. Il resto lo calcola l’app.</p>
+<fieldset class="choice"><legend>Unità</legend><div class="pills"><label class="pill"><input type="radio" name="units" value="mm" checked><span>mm</span></label><label class="pill"><input type="radio" name="units" value="cm"><span>cm</span></label><label class="pill"><input type="radio" name="units" value="ftIn"><span>ft-in</span></label></div></fieldset>
+<fieldset class="choice"><legend>Misura nota</legend><div class="pills"><label class="pill"><input type="radio" name="runkind" value="span" checked><span>Luce</span></label><label class="pill"><input type="radio" name="runkind" value="run"><span>Proiezione</span></label></div></fieldset>
+<div class="field"><label for="r-run">Luce o proiezione</label>
+<div class="joined"><input id="r-run" name="r-run" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="7200" aria-describedby="r-run-hint r-run-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-run-hint">Luce: da filo esterno a filo esterno dei muri. Proiezione: la metà.</span><span class="err" id="r-run-err" hidden></span></div>
+<fieldset class="choice"><legend>Pendenza in</legend><div class="pills"><label class="pill"><input type="radio" name="pitchas" value="per12"><span>Su 12</span></label><label class="pill"><input type="radio" name="pitchas" value="degrees" checked><span>Gradi</span></label><label class="pill"><input type="radio" name="pitchas" value="percent"><span>Percentuale</span></label></div></fieldset>
+<div class="field"><label for="r-pitch">Pendenza</label>
+<input id="r-pitch" name="r-pitch" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" value="30" aria-describedby="r-pitch-err">
+<span class="err" id="r-pitch-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-rise">Dislivello</label>
+<div class="joined"><input id="r-rise" name="r-rise" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-rise-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="err" id="r-rise-err" hidden></span></div><div class="field"><label for="r-len">Lunghezza puntone</label>
+<div class="joined"><input id="r-len" name="r-len" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" aria-describedby="r-len-hint r-len-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-len-hint">Sul bordo superiore</span><span class="err" id="r-len-err" hidden></span></div></div>
+<details class="more" open><summary>Sporto, intaglio, quote</summary>
+<div class="field"><label for="r-oh">Sporto</label>
+<div class="joined"><input id="r-oh" name="r-oh" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="450" aria-describedby="r-oh-hint r-oh-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-oh-hint">Distanza in orizzontale dal filo muro alla fine dello sporto</span><span class="err" id="r-oh-err" hidden></span></div>
+<div class="field-row two"><div class="field"><label for="r-depth">Altezza puntone</label>
+<div class="joined"><input id="r-depth" name="r-depth" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="200" aria-describedby="r-depth-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="err" id="r-depth-err" hidden></span></div><div class="field"><label for="r-seat">Piano d’appoggio</label>
+<div class="joined"><input id="r-seat" name="r-seat" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-kind="length" value="80" aria-describedby="r-seat-hint r-seat-err"><span class="unit" data-unit="len">mm</span></div>
+<span class="hint" id="r-seat-hint">Taglio in bolla che poggia sul dormiente, di solito largo quanto il dormiente</span><span class="err" id="r-seat-err" hidden></span></div></div>
+<fieldset class="choice"><legend>Il puntone appoggia su</legend><div class="pills"><label class="pill"><input type="radio" name="bearing" value="woodOrMetal" checked><span>Legno o acciaio</span></label><label class="pill"><input type="radio" name="bearing" value="masonry"><span>Muratura o calcestruzzo</span></label></div></fieldset>
+</details>
+</form>
+<section class="results" aria-labelledby="res-h">
+<h2 id="res-h" class="sr">Risultato</h2>
+<div id="calc-nojs" class="callout"><p>Questo calcolatore gira nel browser e ha bisogno di JavaScript. Non viene inviato niente.</p></div>
+<div id="res" class="res-card card" aria-live="polite" hidden></div>
+<p class="note">Calcolato nel tuo browser. Quello che scrivi non esce da questa pagina.</p>
+</section>
+</div>
+<script type="application/json" id="calc-i18n">{"locale":"it-IT","decimal":",","units":"mm","pitch":"degrees","unitNames":{"mm":{"len":"mm"},"cm":{"len":"cm"},"ftIn":{"len":"ft-in"}},"placeholders":{},"errEmpty":"Inserisci un numero.","errNumber":"Questo numero la pagina non riesce a leggerlo.","errFeet":"Scrivilo per esempio così: 9' 0 3/4\" oppure 108,75.","errInteger":"Solo numeri interi.","errRange":"È fuori da quello che può essere una scala o un tetto.","waiting":"Inserisci il dislivello per vedere la scala.","app":{"r_riser":"Alzata","r_going":"Pedata","r_totalRun":"Sviluppo","r_stringer":"Cosciale","r_angle":"Inclinazione","r_step":"Blondel (2a + p)","formula_riser":"Alzata = {rise} ÷ {risers} = {riser}","rule_within":"Entro i limiti","rule_over":"Oltre il limite di {by}","rule_under":"Sotto il limite di {by}","rule_notChecked":"Non verificata: manca un valore","rule_notCheckedOpening":"Non verificata: foro non indicato","rule_notApplicable":"Non vale per questa scala","source_secondary":"Fonte secondaria","source_practice":"Buona pratica","yourValue":"La tua misura: {value}","f_run":"Proiezione","f_span":"Luce","f_rise":"Dislivello","f_pitch":"Pendenza","f_length":"Lunghezza puntone","formula_rafter":"Puntone = {run} × {factor} = {length}","roofConflict":"Alcuni valori non tornano tra loro: nessuna modifica.","roofFieldConflict":"Non torna con gli altri valori: differenza di {gap}","roofEmptyBody":"Inserisci due valori a scelta tra proiezione (o luce), dislivello, pendenza e lunghezza del puntone. Il resto lo calcola l’app.","roofPitchCaption":"{per12} · {degrees} · {percent}","derived":"Calcolato","measuringLine":"La lunghezza del puntone si misura sul bordo superiore, dal filo esterno del muro all’asse del colmo.","notchTitle":"Intaglio d’appoggio","notchHeel":"Taglio verticale","notchDepth":"Profondità intaglio","notchShare":"{percent} dell’altezza del puntone","notchFix":"Correzione minima: appoggio di {seat} o meno","notchThumbTitle":"Profondità intaglio, regola del terzo","notchThumb":"Regola pratica, non una norma","notchThumbLimit":"≤ {limit} (⅓ di {depth})","notchFormula":"Intaglio = appoggio × sin {angle} = {seat} × {sin} = {notch}","notchNoSeat":"Con questa pendenza l’appoggio richiede un intaglio troppo profondo per il puntone."},"quantity":{"riser":"Altezza alzata","going":"Pedata","nosing":"Aggetto","treadSurface":"Superficie gradino","stepLength":"Blondel (2a + p)","pitch":"Inclinazione scala","uniformity":"Uniformità dei gradini","headroom":"Altezza libera","width":"Larghezza utile","flightRise":"Dislivello di una rampa","totalRise":"Dislivello totale","risersPerFlight":"Alzate per rampa","landingDepth":"Pianerottolo","winders":"Ventaglio","notchFraction":"Profondità intaglio","bearing":"Appoggio del puntone","tailRemainingDepth":"Sezione residua sbalzo","tailCantilever":"Sbalzo intagliato"},"roof":{"noSolution":"Con questi valori non viene un puntone. Il puntone è sempre più lungo della sua proiezione e del suo dislivello.","maxSeat":"Appoggio massimo entro ¼ dell’altezza","tail":"Sporto lungo la falda","total":"Puntone con sporto","notchHint":"Inserisci l’altezza del puntone e l’appoggio per verificare l’intaglio."}}</script>
+<article class="prose gap-top">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">In questa pagina</p><ol><li><a href="#how">Come si calcola</a></li><li><a href="#birdsmouth">La verifica dell’intaglio d’appoggio</a></li><li><a href="#pitch">Pendenza in gradi, in percentuale e su 12</a></li></ol></nav>
+<h2 id="how">Come si calcola</h2>
+<p>Il puntone è l’ipotenusa di un triangolo rettangolo: in orizzontale la proiezione, in verticale il dislivello. La sua lunghezza è la proiezione per il fattore di pendenza, √(1 + i²), con i la pendenza in decimali (35 % fa 0,35). Con la luce di 7,20 m del modulo qui sopra la proiezione è di 3,60 m; a 30° il fattore è 1,1547 e il puntone viene lungo 4157 mm.</p><p>Due valori qualsiasi tra lati e angolo fissano il triangolo. Se ne scrivi tre che non tornano tra loro, la pagina ti dice di quanto e non cambia niente.</p><p>La lunghezza si misura sul bordo superiore del puntone, dal filo esterno del muro all’asse del colmo. Prima di tagliare togli metà dello spessore del colmo, misurata in orizzontale.</p>
+<h2 id="birdsmouth">La verifica dell’intaglio d’appoggio</h2>
+<p>Il piano d’appoggio è il taglio in bolla che siede sul dormiente; il taglio verticale è la faccia a piombo sopra. La profondità dell’intaglio, misurata a squadra sul puntone, è l’appoggio per il seno della pendenza. Con un puntone alto 200 mm, 80 mm di appoggio e 30° di pendenza l’intaglio è di 40 mm: un quinto dell’altezza, entro il quarto (50 mm).</p><p>Il limite di un quarto viene dal codice americano IRC (R802.7.1, che rimanda a R502.8.1) per il legno segato, come anche l’appoggio minimo della R802.6: 38 mm (1 ½ in) su legno, 76 mm (3 in) su muratura. Per l’intaglio l’app non ha un limite italiano: usa quello americano come riferimento e lo indica. Molti carpentieri usano la regola del terzo: la pagina la mostra, segnata come regola pratica, non una norma. La struttura, cioè sezione del puntone e luce, la dimensiona il tuo ingegnere strutturista.</p>
+<h2 id="pitch">Pendenza in gradi, in percentuale e su 12</h2>
+<p>Sui disegni italiani la pendenza si trova spesso in percentuale: 30 % sono 16,7°, 35 % sono 19,3°, 100 % sono 45°. Una falda a 30° sale del 57,7 %. Su 12 è l’uso americano: 6 su 12 sono 26,6° o 50 %. La pagina converte quando cambi unità.</p>
+<nav class="next" aria-label="Avanti"><p class="next-h">Avanti</p><ul><li><a href="../../it/calcolo-scale/">Calcolo scale<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">Gli stessi calcoli in tasca</h2>
+<p>L’app risolve lo stesso triangolo anche con le quote di dormiente, colmo e gronda, misura la pendenza col telefono e con Pro calcola displuvi, compluvi e ogni accorciato, anche con due falde a pendenze diverse.</p>
+<p class="small">Offline. Niente account, niente pubblicità, niente abbonamento. Scale rettilinee, verifica della normativa e puntone sono gratis; Pro è un solo pagamento.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>In arrivo</b></span><span class="store soon"><small>App Store</small><b>In arrivo</b></span></div>
+</aside>
+<h2>Fonti</h2>
+<ol class="sources"><li><a href="https://codes.iccsafe.org/content/IRC2021P2/chapter-8-roof-ceiling-construction" rel="noopener">ICC, International Residential Code 2021, R802 Wood roof framing</a></li><li><a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9" rel="noopener">NIST SP 811, Appendix B.9: inch, foot</a></li></ol>
+<p class="callout">I risultati sono un supporto alla progettazione. Prima di costruire, verifica le norme in vigore con l’ufficio tecnico del tuo Comune.</p>
+<p class="updated">Valori controllati sulle fonti il 2 novembre 2026.</p>
+</article>
+</div>
+<div class="wrap"><p class="also-in"><span>Questa pagina in:</span> <a href="../../rafter-calculator/" hreflang="en" lang="en">English</a><a href="../../de/sparrenrechner/" hreflang="de" lang="de">Deutsch</a><a href="../../fr/calcul-chevron/" hreflang="fr" lang="fr">Français</a><a href="../../nl/kepers-berekenen/" hreflang="nl" lang="nl">Nederlands</a><a href="../../es/calcular-cabio/" hreflang="es" lang="es">Español</a><a href="../../pt-br/calcular-caibro/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../../pl/kalkulator-krokwi/" hreflang="pl" lang="pl">Polski</a><a href="../../tr/mertek-hesaplama/" hreflang="tr" lang="tr">Türkçe</a></p></div>
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">I risultati sono un supporto alla progettazione. Prima di costruire, verifica le norme in vigore con l’ufficio tecnico del tuo Comune.</p>
+<p>Notchline è fatta da MufaTech, un piccolo studio che crea strumenti offline da pagare una volta sola.</p>
+<nav aria-label="Sito"><a href="../../it/">Notchline</a><a href="../../it/calcolo-scale/">Calcolo scale</a><a href="../../it/calcolo-puntone/">Calcolo puntone</a><a href="../../it/support/">Aiuto</a><a href="../../it/privacy/">Privacy</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+<script type="module" src="../../assets/calc-ui.js"></script>
+</body>
+</html>

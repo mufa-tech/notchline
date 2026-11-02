@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Validation: how Notchline's numbers are checked</title>
+<meta name="description" content="How the stair and rafter numbers are checked: published worked examples, engine test cases and this site's calculators against the app's engine.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2ECDF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141619" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://mufa-tech.github.io/notchline/validation/">
+<link rel="alternate" hreflang="en" href="https://mufa-tech.github.io/notchline/validation/">
+<link rel="alternate" hreflang="x-default" href="https://mufa-tech.github.io/notchline/validation/">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Notchline">
+<meta property="og:title" content="Validation: how Notchline's numbers are checked">
+<meta property="og:description" content="How the stair and rafter numbers are checked: published worked examples, engine test cases and this site's calculators against the app's engine.">
+<meta property="og:url" content="https://mufa-tech.github.io/notchline/validation/">
+<meta property="og:image" content="https://mufa-tech.github.io/notchline/assets/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../"><img src="../assets/icon.svg" alt="" width="32" height="32">Notchline</a>
+<nav class="main" aria-label="Main menu"><a href="../stair-calculator/">Stair calculator</a><a href="../rafter-calculator/">Rafter calculator</a><a href="../support/">Help</a></nav>
+<details class="langpick"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg><span>EN</span></summary><nav aria-label="Language"><a href="../validation/" hreflang="en" lang="en" aria-current="true">English</a><a href="../de/" hreflang="de" lang="de">Deutsch</a><a href="../fr/" hreflang="fr" lang="fr">Français</a><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a><a href="../it/" hreflang="it" lang="it">Italiano</a><a href="../es/" hreflang="es" lang="es">Español</a><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="../pl/" hreflang="pl" lang="pl">Polski</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav></details>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="wrap">
+<p class="crumb"><a href="../">Notchline</a></p>
+<h1>How the numbers are checked</h1>
+<p class="lead">Every formula in the app has test cases with a source. Here are the published values the free calculators on this site reproduce, and how the site is held to the app.</p>
+
+<article class="prose">
+<nav class="toc" aria-labelledby="toc-h"><p id="toc-h" class="toc-h">On this page</p><ol><li><a href="#engine">The engine</a></li><li><a href="#site">This site against the app</a></li><li><a href="#published">Published values</a></li><li><a href="#codes">The rule sets</a></li></ol></nav>
+<h2 id="engine">The engine</h2>
+<p>The stair and roof maths runs in one engine, tested with 353 cases, 91 of them against published worked examples: carpentry references, code commentary, trade schools and stair-maker guides. A failing case stops a release.</p>
+<h2 id="site">This site against the app</h2>
+<p>The calculators on this site are a port of the same engine to JavaScript. Every change runs them against 2079 stairs across 11 rule sets and 318 roof and birdsmouth cases computed by the app's own engine: every number must match to a billionth and every rule must reach the same verdict.</p>
+<h2 id="published">Published values</h2>
+<p>Values from published examples that the calculators on this page reproduce:</p><p class="table-cap" aria-hidden="true">Published values and this site's calculator</p><div class="table-wrap"><table class="num-table"><caption class="sr">Published values and this site's calculator</caption>
+<thead><tr><th scope="col">Source</th><th scope="col">What</th><th scope="col">Published</th><th scope="col">This site</th><th scope="col">Result</th></tr></thead>
+<tbody><tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/2-12" rel="noopener">swansontoolco.com</a></th><td class="l">Pitch in degrees</td><td>9.4623</td><td>9.4623</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/3-12" rel="noopener">swansontoolco.com</a></th><td class="l">Pitch in degrees</td><td>14.0362</td><td>14.0362</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/4-12" rel="noopener">swansontoolco.com</a></th><td class="l">Pitch in degrees</td><td>18.4349</td><td>18.4349</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/5-12" rel="noopener">swansontoolco.com</a></th><td class="l">Pitch in degrees</td><td>22.6199</td><td>22.6199</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/6-12" rel="noopener">swansontoolco.com</a></th><td class="l">Pitch in degrees</td><td>26.5651</td><td>26.5651</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://en.wikipedia.org/wiki/Steel_square" rel="noopener">en.wikipedia.org</a></th><td class="l">Rafter per 12 of run</td><td>14.4222</td><td>14.4222</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://en.wikipedia.org/wiki/Steel_square" rel="noopener">en.wikipedia.org</a></th><td class="l">Rafter per 12 of run</td><td>16.9706</td><td>16.9706</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://en.wikipedia.org/wiki/Steel_square" rel="noopener">en.wikipedia.org</a></th><td class="l">Rafter per 12 of run</td><td>19.2094</td><td>19.2094</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://en.wikipedia.org/wiki/Steel_square" rel="noopener">en.wikipedia.org</a></th><td class="l">Rafter per 12 of run</td><td>21.6333</td><td>21.6333</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/4-12" rel="noopener">swansontoolco.com</a></th><td class="l">Rafter per 12 of run</td><td>12.6491</td><td>12.6491</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/4-12" rel="noopener">swansontoolco.com</a></th><td class="l">Slope factor</td><td>1.0541</td><td>1.0541</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/4-12" rel="noopener">swansontoolco.com</a></th><td class="l">Common rafter</td><td>8.4327</td><td>8.4327</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/4-12" rel="noopener">swansontoolco.com</a></th><td class="l">Common rafter</td><td>10.5409</td><td>10.5409</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/4-12" rel="noopener">swansontoolco.com</a></th><td class="l">Common rafter</td><td>12.6491</td><td>12.6491</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/4-12" rel="noopener">swansontoolco.com</a></th><td class="l">Common rafter</td><td>14.7573</td><td>14.7573</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/4-12" rel="noopener">swansontoolco.com</a></th><td class="l">Common rafter</td><td>16.8655</td><td>16.8655</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/4-12" rel="noopener">swansontoolco.com</a></th><td class="l">Common rafter</td><td>18.9737</td><td>18.9737</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://swansontoolco.com/learn/pitch/4-12" rel="noopener">swansontoolco.com</a></th><td class="l">Common rafter</td><td>21.0819</td><td>21.0819</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.maine.gov/doe/sites/maine.gov.doe/files/inline-files/CTE%20-%20Math%20in%20CTE%20Construction%20Roof%20Rafters%20-%2002.18.2025.pdf" rel="noopener">www.maine.gov</a></th><td class="l">Common rafter</td><td>78</td><td>78</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://inspectapedia.com/structure/Chappell_Framing-Square-Manual.pdf" rel="noopener">inspectapedia.com</a></th><td class="l">Common rafter</td><td>197.7</td><td>197.7</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://inspectapedia.com/structure/Chappell_Framing-Square-Manual.pdf" rel="noopener">inspectapedia.com</a></th><td class="l">Common rafter</td><td>16.225</td><td>16.225</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://inspectapedia.com/structure/Chappell_Framing-Square-Manual.pdf" rel="noopener">inspectapedia.com</a></th><td class="l">Common rafter</td><td>10.4193</td><td>10.4193</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.jlconline.com/wp-content/uploads/sites/4/2024/0324c-jlc-pdb-stairs.pdf" rel="noopener">www.jlconline.com</a></th><td class="l">Fewest risers</td><td>14</td><td>14</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.jlconline.com/wp-content/uploads/sites/4/2024/0324c-jlc-pdb-stairs.pdf" rel="noopener">www.jlconline.com</a></th><td class="l">Riser height</td><td>7.8846</td><td>7.8846</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.jlconline.com/wp-content/uploads/sites/4/2024/0324c-jlc-pdb-stairs.pdf" rel="noopener">www.jlconline.com</a></th><td class="l">Riser height</td><td>7.3214</td><td>7.3214</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.jlconline.com/wp-content/uploads/sites/4/2024/0324c-jlc-pdb-stairs.pdf" rel="noopener">www.jlconline.com</a></th><td class="l">Riser height</td><td>6.8333</td><td>6.8333</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.jlconline.com/wp-content/uploads/sites/4/2024/0324c-jlc-pdb-stairs.pdf" rel="noopener">www.jlconline.com</a></th><td class="l">Riser height</td><td>6.4063</td><td>6.4063</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.jlconline.com/wp-content/uploads/sites/4/2024/0324c-jlc-pdb-stairs.pdf" rel="noopener">www.jlconline.com</a></th><td class="l">Stair angle</td><td>33.6471</td><td>33.6471</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.jlconline.com/wp-content/uploads/sites/4/2024/0324c-jlc-pdb-stairs.pdf" rel="noopener">www.jlconline.com</a></th><td class="l">Step along the stringer</td><td>13.2138</td><td>13.2138</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.jlconline.com/wp-content/uploads/sites/4/2024/0324c-jlc-pdb-stairs.pdf" rel="noopener">www.jlconline.com</a></th><td class="l">Total run</td><td>143</td><td>143</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.jlconline.com/wp-content/uploads/sites/4/2024/0324c-jlc-pdb-stairs.pdf" rel="noopener">www.jlconline.com</a></th><td class="l">Nosing line</td><td>171.8</td><td>171.8</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.firgelliauto.com/blogs/engineering-calculators/stair-calculator-rise-run-number-of-steps" rel="noopener">www.firgelliauto.com</a></th><td class="l">Stringer length</td><td>120.4</td><td>120.4</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.isb.bayern.de/fileadmin/user_upload/Berufliche_Schulen/Berufsschule/Material/Aufgaben_math._zeichn._Grundlagen/Bautechnik/Maurer_TB_mK.pdf" rel="noopener">www.isb.bayern.de</a></th><td class="l">Riser height</td><td>17.8</td><td>17.8</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.isb.bayern.de/fileadmin/user_upload/Berufliche_Schulen/Berufsschule/Material/Aufgaben_math._zeichn._Grundlagen/Bautechnik/Maurer_TB_mK.pdf" rel="noopener">www.isb.bayern.de</a></th><td class="l">Going from the step rule</td><td>27.4</td><td>27.4</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.isb.bayern.de/fileadmin/user_upload/Berufliche_Schulen/Berufsschule/Material/Aufgaben_math._zeichn._Grundlagen/Bautechnik/Maurer_TB_mK.pdf" rel="noopener">www.isb.bayern.de</a></th><td class="l">Total run</td><td>383.6</td><td>383.6</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.isb.bayern.de/fileadmin/user_upload/Berufliche_Schulen/Berufsschule/Material/Aufgaben_math._zeichn._Grundlagen/Bautechnik/Maurer_TB_mK.pdf" rel="noopener">www.isb.bayern.de</a></th><td class="l">Riser height</td><td>19.0714</td><td>19.0714</td><td><span class="ok-mark">✓ within tolerance</span></td></tr>
+<tr><th scope="row" class="l"><a href="https://www.isb.bayern.de/fileadmin/user_upload/Berufliche_Schulen/Berufsschule/Material/Aufgaben_math._zeichn._Grundlagen/Bautechnik/Maurer_TB_mK.pdf" rel="noopener">www.isb.bayern.de</a></th><td class="l">Total run</td><td>325</td><td>325</td><td><span class="ok-mark">✓ within tolerance</span></td></tr></tbody></table></div>
+<h2 id="codes">The rule sets</h2>
+<p>The stair calculator offers each country's home rule set. Numbers from trade summaries rather than the official text are labelled.</p><p class="table-cap" aria-hidden="true">Rule sets on the stair calculator</p><div class="table-wrap"><table class="num-table"><caption class="sr">Rule sets on the stair calculator</caption>
+<thead><tr><th scope="col">Country</th><th scope="col">Rule set</th><th scope="col">Rules</th><th scope="col">Numbers checked</th><th scope="col">Note</th></tr></thead>
+<tbody><tr><th scope="row" class="l">United States</th><td class="l">IRC 2021 · one- and two-family dwellings</td><td>11</td><td>2026-11-01</td><td class="l"></td></tr>
+<tr><th scope="row" class="l">Canada</th><td class="l">NBC 2020 · private stairs</td><td>11</td><td>2026-11-01</td><td class="l"></td></tr>
+<tr><th scope="row" class="l">England</th><td class="l">Approved Document K 2013 · private stair</td><td>11</td><td>2026-11-01</td><td class="l"></td></tr>
+<tr><th scope="row" class="l">England</th><td class="l">Approved Document K 2013 · loft conversion</td><td>11</td><td>2026-11-01</td><td class="l"></td></tr>
+<tr><th scope="row" class="l">Germany</th><td class="l">DIN 18065:2020-08 · home, main stair</td><td>9</td><td>2026-11-01</td><td class="l">Secondary source</td></tr>
+<tr><th scope="row" class="l">France</th><td class="l">Arrêté du 24 décembre 2015 · inside a home</td><td>6</td><td>2026-11-01</td><td class="l"></td></tr>
+<tr><th scope="row" class="l">Netherlands</th><td class="l">Bbl · new home</td><td>7</td><td>2026-11-01</td><td class="l"></td></tr>
+<tr><th scope="row" class="l">Spain</th><td class="l">CTE DB SUA 2022 · restricted use (inside a home)</td><td>6</td><td>2026-11-01</td><td class="l"></td></tr>
+<tr><th scope="row" class="l">Italy</th><td class="l">DM 236/1989 · private stair</td><td>4</td><td>2026-11-01</td><td class="l">Secondary source</td></tr>
+<tr><th scope="row" class="l">Australia</th><td class="l">NCC 2022 · housing</td><td>13</td><td>2026-11-01</td><td class="l"></td></tr>
+<tr><th scope="row" class="l">Türkiye</th><td class="l">PAİY 2017 · inside a home, no lift</td><td>7</td><td>2026-11-01</td><td class="l"></td></tr></tbody></table></div>
+<nav class="next" aria-label="Next"><p class="next-h">Next</p><ul><li><a href="../stair-calculator/">Stair calculator<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="../rafter-calculator/">Rafter calculator<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li></ul></nav>
+<aside class="card app-note gap-top" aria-labelledby="app-h">
+<h2 id="app-h" class="h3">The same maths in your pocket</h2>
+<p>The app shows the formula under every result with your own numbers, so you can check any of them on a scrap of plywood.</p>
+<p class="small">Offline. No account, no ads, no subscription. Straight stairs, the code check and the common rafter are free; Pro is one payment.</p>
+<div class="stores"><span class="store soon"><small>Google Play</small><b>Coming soon</b></span><span class="store soon"><small>App Store</small><b>Coming soon</b></span></div>
+</aside>
+<h2>Sources</h2>
+<ol class="sources"><li><a href="https://swansontoolco.com/learn/pitch/2-12" rel="noopener">swansontoolco.com</a></li><li><a href="https://swansontoolco.com/learn/pitch/3-12" rel="noopener">swansontoolco.com</a></li><li><a href="https://swansontoolco.com/learn/pitch/4-12" rel="noopener">swansontoolco.com</a></li><li><a href="https://swansontoolco.com/learn/pitch/5-12" rel="noopener">swansontoolco.com</a></li><li><a href="https://swansontoolco.com/learn/pitch/6-12" rel="noopener">swansontoolco.com</a></li><li><a href="https://en.wikipedia.org/wiki/Steel_square" rel="noopener">en.wikipedia.org</a></li><li><a href="https://www.maine.gov/doe/sites/maine.gov.doe/files/inline-files/CTE%20-%20Math%20in%20CTE%20Construction%20Roof%20Rafters%20-%2002.18.2025.pdf" rel="noopener">www.maine.gov</a></li><li><a href="https://inspectapedia.com/structure/Chappell_Framing-Square-Manual.pdf" rel="noopener">inspectapedia.com</a></li><li><a href="https://www.jlconline.com/wp-content/uploads/sites/4/2024/0324c-jlc-pdb-stairs.pdf" rel="noopener">www.jlconline.com</a></li><li><a href="https://www.firgelliauto.com/blogs/engineering-calculators/stair-calculator-rise-run-number-of-steps" rel="noopener">www.firgelliauto.com</a></li><li><a href="https://www.isb.bayern.de/fileadmin/user_upload/Berufliche_Schulen/Berufsschule/Material/Aufgaben_math._zeichn._Grundlagen/Bautechnik/Maurer_TB_mK.pdf" rel="noopener">www.isb.bayern.de</a></li></ol>
+<p class="callout">Results are design aids. Check the current rules with your local building authority before you build.</p>
+<p class="updated">Checked against the sources on November 2, 2026.</p>
+</article>
+</div>
+
+</main>
+<footer><div class="wrap">
+<p class="disclaimer">Results are design aids. Check the current rules with your local building authority before you build.</p>
+<p>Notchline is made by MufaTech, a small studio that builds offline tools you pay for once.</p>
+<nav aria-label="Site"><a href="../">Notchline</a><a href="../stair-calculator/">Stair calculator</a><a href="../rafter-calculator/">Rafter calculator</a><a href="../validation/">How the numbers are checked</a><a href="../support/">Help</a><a href="../privacy/">Privacy</a><a href="mailto:hello@mufatech.com">hello@mufatech.com</a></nav>
+</div></footer>
+
+</body>
+</html>
